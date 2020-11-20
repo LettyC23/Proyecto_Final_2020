@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel='stylesheet' type='text/css' media='screen' href='Scripts/estilos/style_dashboard.css' />
+    <link rel='stylesheet' type='text/css' media='screen' href='Scripts/estilos/style_products.css' />
+    <link rel='stylesheet' type='text/css' media='screen' href='Scripts_js/inicio.js' />
+</head>
+<body class="main">
+    <div class="nav">
+        <a href="#" class="active" >INICIO</a> 
+        <a href="#" class="right" ><img src="img/cerrar-sesion.png"></a> 
+        
+    </div>
+
+    <section>
+        <aside>
+            <div class="nav">
+                <nav>
+                <ul>
+                    <li><a href="pagina_dashboard.html"> <img src="img/pagina-principal.png">&emsp; Inicio</a></li>
+                    <li><a href="pagina_productos.html"> <img src="img/carrito-de-compras.png">  Productos</a></li>
+                    <li><a href="pagina_clientes.html"> <img src="img/configuracion.png"> &emsp;Clientes</a></li>
+                    <li><a href="#"> <img src="img/configuracion.png">  Usuarios</a></li>
+                    <li><a href="#"> <img src="img/configuracion.png"> Proveedores</a></li>
+                    <li><a href="#"> <img src="img/configuracion.png">&emsp; Ajustes</a></li>
+                    <li><a href="#">Salir</a></li>
+                </ul>
+            </nav>
+        </div>
+        </aside>
+
+        <section class="main-productos">
+
+            <!--------------------------------Formulario altas------------------------------------->
+            <div class="simple_form">
+                <h2>Administrar Productos</h2>
+                <br>
+                <div class="left">
+                &emsp;&emsp;&emsp;<label>Descripción</label>&emsp;
+                <br>
+                <input type="text"  id="caja_descripcion_producto" name="caja_descripcion_producto"/>
+            </div>
+            <div class="left">
+                &emsp;&emsp;<label>Precio </label>&emsp;
+                <br>
+                <input type="text" size="9" id="caja_precio" name="caja_precio"/>
+            </div>
+             
+            <div class="left"> 
+                &ensp;<label> Existencias </label>
+                <br>
+                <input type="text" size="10" id="caja_existencias" name="caja_existencias"/>
+            </div>
+                
+            <div class="left">
+                &emsp; <label> Tipo de producto </label>
+                <br>
+                <select id="inputState" class="form-control" name="select_tipo_producto">
+                    <option selected>Elige tipo de producto</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                  </select>&emsp;&emsp;
+            </div>
+           
+            <div  class="left">
+                &emsp;<label> Proveedor </label>
+                <br>
+                <select id="inputState" class="form-control" name="select_proveedor">
+                    <option selected>Elige proveedor</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                  </select>
+                  &emsp;&emsp;<button>Guardar producto</button>
+                  <br>
+                  <br>
+                  <br>
+            </div>      
+                  
+            <div class="div-search">
+                
+                &emsp;&emsp;<input type="text" size="50" id="caja_buscar_producto" name="caja_buscar_producto"/>
+                <br><br><br><br>
+            </div>
+              
+            
+
+
+               <!--------------------------------TABLA PRODUCTOS------------------------>
+               <table>
+
+                <tr> 
+                    <th>id_Producto</th>
+                    <th>Descripción</th>
+                    <th>Precio</th>
+                    <th>Exisencias</th>
+                </tr>
+
+            </table>
+
+
+
+            </div>
+            
+         
+
+        </section>
+    </section>
+    
+   
+
+
+</body>
+</html>
