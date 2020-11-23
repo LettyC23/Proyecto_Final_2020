@@ -5,7 +5,7 @@
        private $host='localhost:3308';
        private $usuario='root';
        private $contraseña='';
-       private $bd='db_escuela';
+       private $bd='sistema_facturacion';
 
        public function __construct(){
            $this->conexion = mysqli_connect($this->host, $this->usuario, $this->contraseña, $this->bd);

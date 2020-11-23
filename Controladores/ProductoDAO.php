@@ -1,6 +1,6 @@
 <?php
 
-include('conexion_bd.php');
+include('../Conexion_BD/conexion_bd.php');
 
 class ProductoDAO{
     private $conexion;
@@ -11,9 +11,8 @@ class ProductoDAO{
       
       //--------------------------------------- ALTAS -------------------------------------------
 
-      public function agregarProducto($nc, $n, $pa, $sa, $e, $s, $c){
-        $sql= "INSERT INTO Productos ('DescripcionProducto','Precio','stock','FK_id_TipoProducto','FK_id_Proveedor') 
-        VALUES('$descripcion','$precio','$stock','$idproducto', $idproveedor);";
+      public function agregarProducto($id, $descripcion, $precio, $stock, $id_producto, $id_proveedor){
+        $sql= "INSERT INTO Productos VALUES ('$id', '$descripcion','$precio','$stock','$id_producto', '$id_proveedor');";
         if(mysqli_query($this->conexion->getConexion(),$sql)  ){
             echo("<script> alert('Agregado con Exito')</script>");
             //header('location:../vista/formulario_altas.php');

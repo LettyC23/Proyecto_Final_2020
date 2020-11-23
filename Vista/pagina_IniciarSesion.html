@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <head>
     <title>Iniciar Sesión</title>
-
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <!--JQUERY-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- FRAMEWORK BOOTSTRAP para el estilo de la pagina-->
@@ -33,9 +33,10 @@
                     <div class="form-group" id="contrasena-group">
                         <input type="password" class="form-control" placeholder="Contraseña" name="password"/>
                     </div>
-                   
+                    <div class="g-recaptcha" data-sitekey="6LdmW-oZAAAAAG8wR5cDKXsNKVWZtwiKGVqBcSQu"></div>
                     <button type="submit" class="btn btn-primary"><i class="fas fa-sign-in-alt"></i>  Ingresar </button>
                 </form>
+               
                 <div class="col-12 forgot">
                     <a href="#">Recordar contraseña?</a>
                 </div>
