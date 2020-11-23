@@ -35,6 +35,22 @@ class ProductoDAO{
             echo mysqli_error($this->conexion->getConexion());
         }
     }//eliminar
+
+
+    //----------------------------- MODIFICAR ---------------------------------
+
+    public function modificarProducto($id, $descripcion, $precio, $stock, $id_producto, $id_proveedor){
+        $sql= "UPDATE Productos  SET DescripcionProducto='$descripcion',Precio='$precio',Stock='$stock',
+        FK_id_TipoProducto='$id_producto',FK_id_Proveedor='$id_proveedor';";
+        if(mysqli_query($this->conexion->getConexion(),$sql)  ){
+            header('location:../vista/pagina_productos.php');
+        }else{
+            echo "¿SERA MUY TARDE PARA CAMBIAR DE CARRERA??? =(";
+            echo mysqli_error($this->conexion->getConexion());
+            echo $sql;
+        }
+    }//modificar
+
 }
 
 ?>

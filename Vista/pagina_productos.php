@@ -15,8 +15,8 @@
           width: 100%;
         }
         #customers td, #customers th{
-          border: 1px solid #ddd;
-          padding:8px;
+         
+          padding:10px;
         }
 
         #customers tr:nth-child(even){background-color:#f2f2f2;}
@@ -26,7 +26,7 @@
         #customers th{
           padding-top: 12px;
           padding-bottom: 12px;
-          text-align: left;
+          text-align: center;
           background-color: #0000;
           color: white;
         }
@@ -152,8 +152,9 @@
                 "<td>".$fila['Stock']."</td>".
                 "<td>".$fila['FK_id_TipoProducto']."</td>".
                 "<td>".$fila['FK_id_Proveedor']."</td>".
-                "<td> <a href='../Modelos/procesar_bajas_productos.php?nc=%s'> Eliminar </a> </td> </tr>", $fila['id_Producto']
-              );
+                "<td> <a href='pagina_404.html'><img src='img/edit.png'> </a> &emsp;  <a href='../Modelos/procesar_bajas_productos.php?nc=%s'> <img src='img/trash-can.png'> </a> </td> </tr>", $fila['id_Producto']
+              
+            );
           }
         }else{
           //echo ('no hay datos');
