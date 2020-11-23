@@ -29,7 +29,6 @@ class ProductoDAO{
     public function eliminarProducto($nc){
         $sql= "DELETE FROM Productos WHERE id_Producto ='$nc'";
         if(mysqli_query($this->conexion->getConexion(),$sql)  ){
-            echo("<script> alert('Eliminado con EXITO')</script>");
             header('location:../vista/pagina_productos.php');
         }else{
             echo "¿SERA MUY TARDE PARA CAMBIAR DE CARRERA??? =(";
