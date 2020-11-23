@@ -22,6 +22,20 @@ class ProductoDAO{
             echo mysqli_error($this->conexion->getConexion());
         }
     }//agregar
+
+
+
+    //--------------------------------------- BAJAS -------------------------------------------
+    public function eliminarProducto($nc){
+        $sql= "DELETE FROM Productos WHERE id_Producto ='$nc'";
+        if(mysqli_query($this->conexion->getConexion(),$sql)  ){
+            echo("<script> alert('Eliminado con EXITO')</script>");
+            
+        }else{
+            echo "¿SERA MUY TARDE PARA CAMBIAR DE CARRERA??? =(";
+            echo mysqli_error($this->conexion->getConexion());
+        }
+    }//eliminar
 }
 
 ?>

@@ -125,6 +125,9 @@
                     <th>Descripción</th>
                     <th>Precio</th>
                     <th>Exisencias</th>
+                    <th>Tipo de Producto</th>
+                    <th>Proveedor </th>
+                    <th>Acciones</th>
                 </tr>
 
 
@@ -141,7 +144,7 @@
 
         //var_dump($res);
 
-        if(mysqli_num_rows($res)>0){
+        if(mysqli_num_rows($res)>0 ){
           while($fila = mysqli_fetch_assoc($res)){
                 printf("<tr><td>".$fila['id_Producto']."</td>".
                 "<td>".$fila['DescripcionProducto']."</td>".
@@ -149,7 +152,7 @@
                 "<td>".$fila['Stock']."</td>".
                 "<td>".$fila['FK_id_TipoProducto']."</td>".
                 "<td>".$fila['FK_id_Proveedor']."</td>".
-                "<td> <a href='../sitio/scripts_php/procesar_bajas.php?nc=%s'>ELIMINAR </a> </td> </tr>", $fila['Num_Control']
+                "<td> <a href='../Modelos/procesar_bajas_productos.php?nc=%s'> Eliminar q </a> </td> </tr>", $fila['id_Producto']
               );
           }
         }else{
