@@ -106,15 +106,17 @@
                       <br>
                 </div>      
                       
-                <div class="div-search">
+             
+                  
+            </form>
+            
+            <form method="POST" action="../Modelos/procesar_consultas_productos.php">
+            <div class="div-search">
                     
                     &emsp;&emsp;<input type="text" size="50" id="caja_buscar_producto" name="caja_buscar_producto"/>
                     <br><br><br><br>
                 </div>
-                  
             </form>
-            
-            
 
 
                <!--------------------------------TABLA PRODUCTOS------------------------>
@@ -160,6 +162,9 @@
           //echo ('no hay datos');
         }
 
+
+        
+
       ?>
 
             </table>
@@ -172,7 +177,14 @@
 
         </section>
     </section>
-    
+    <script>
+        $(document).ready(function(){
+            var table = $('#customers').DataTable({
+                orderCellsTop: true,
+                fixedHeader: true
+            });
+        });
+    </script>    
    
 
 
