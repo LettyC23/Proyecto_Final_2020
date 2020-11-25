@@ -40,8 +40,8 @@ class ProductoDAO{
     //----------------------------- MODIFICAR ---------------------------------
 
     public function modificarProducto($id, $descripcion, $precio, $stock, $id_producto, $id_proveedor){
-        $sql= "UPDATE Productos  SET DescripcionProducto='$descripcion',Precio='$precio',Stock='$stock',
-        FK_id_TipoProducto='$id_producto',FK_id_Proveedor='$id_proveedor';";
+        $sql= "UPDATE Productos SET DescripcionProducto='$descripcion',Precio='$precio',Stock='$stock',
+        FK_id_TipoProducto='$id_producto',FK_id_Proveedor='$id_proveedor' WHERE id_Producto='$id';";
         if(mysqli_query($this->conexion->getConexion(),$sql)  ){
             header('location:../vista/pagina_productos.php');
         }else{

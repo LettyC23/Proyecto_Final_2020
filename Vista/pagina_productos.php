@@ -8,29 +8,7 @@
     <link rel='stylesheet' type='text/css' media='screen' href='Scripts/estilos/styleProducts.css' />
     <link rel='stylesheet' type='text/css' media='screen' href='Scripts_js/inicio.js' />
 
-    <style>
-        #customers {
-          font-family: Arial, Helvetica, sans-serif;
-          border-collapse: collapse;
-          width: 100%;
-        }
-        #customers td, #customers th{
-         
-          padding:10px;
-        }
-
-        #customers tr:nth-child(even){background-color:#f2f2f2;}
-
-        #customers tr:hover {background-color: #ddd}
-
-        #customers th{
-          padding-top: 12px;
-          padding-bottom: 12px;
-          text-align: center;
-          background-color: #0000;
-          color: white;
-        }
-    </style>
+    
 </head>
 <body class="main">
     <div class="nav">
@@ -100,7 +78,7 @@
                         <option>2</option>
                         <option>3</option>
                       </select>
-                      &emsp;&emsp;<button type="submit">Guardar producto</button>
+                      &emsp;&emsp;<button class="button" type="submit">Guardar producto</button>
                       <br>
                       <br>
                       <br>
@@ -129,7 +107,8 @@
                     <th>Exisencias</th>
                     <th>Tipo de Producto</th>
                     <th>Proveedor </th>
-                    <th>Acciones</th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
                 </tr>
 
 
@@ -154,7 +133,9 @@
                 "<td>".$fila['Stock']."</td>".
                 "<td>".$fila['FK_id_TipoProducto']."</td>".
                 "<td>".$fila['FK_id_Proveedor']."</td>".
-                "<td> <a href='../Vista/pagina_realizar_cambios_productos.php'><img src='img/edit.png'> </a> &emsp;  <a href='../Modelos/procesar_bajas_productos.php?nc=%s'> <img src='img/trash-can.png'> </a> </td> </tr>", $fila['id_Producto']
+                "<td> <a href='../Vista/pagina_realizar_cambios_productos.php?nc=%s&dp=%s&p=%s&s=%s'> <img src='img/edit.png'> </a>" ." </td>".
+                "<td> <a href='../Modelos/procesar_bajas_productos.php?nc=%s'> <img src='img/trash-can.png'> </a> </td> 
+                </tr>", $fila['id_Producto'], $fila['DescripcionProducto'],  $fila['Precio'],  $fila['Stock'], $fila['id_Producto']
               
             );
           }
