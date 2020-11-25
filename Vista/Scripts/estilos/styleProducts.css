@@ -1,4 +1,22 @@
-body {
+section {
+    display: flex;
+    flex: 95%;
+    background-color:rgb(235, 230, 235);
+}
+.simple_form div.left {
+    float: left;
+    text-align: left;
+    margin: 2px 10px;
+    display: inline;
+}
+
+.div-search{
+    text-align: center;
+    width: 100%;
+}
+
+
+.body_edit_products {
     background-image: linear-gradient(125deg,#6a89cc,#b8e994);
     font-family: ‘Open Sans’, sans-serif;
 
@@ -17,26 +35,33 @@ body {
         }
 
     #login {
-        width: 320px;
+        width: 450px;
         padding-bottom: 15px;
+        
         } 
    
     .mlogin {
         opacity: .85;
         box-shadow: 0px 0px 3px #848484;
-        margin:0 35%;
+        margin:0 30%;
         padding: 10px;
-        text-align: center;
+        text-align: left;
         font-family: "Font Awesome\ 5 Free";
         position: absolute;
         left: 28px;
         font-size: 22px;
         padding-top:4px;
         background: white;
-        
+       
     }
   
 
+    .mlogin div.left {
+        float: left;
+        text-align: left;
+        margin: 2px 10px;
+        display: inline;
+    }
 
     .button{
     border: solid 1px #da7c0c;

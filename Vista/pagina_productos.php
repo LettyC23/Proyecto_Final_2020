@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio</title>
     <link rel='stylesheet' type='text/css' media='screen' href='Scripts/estilos/style_dashboard.css' />
-    <link rel='stylesheet' type='text/css' media='screen' href='Scripts/estilos/style_products.css' />
+    <link rel='stylesheet' type='text/css' media='screen' href='Scripts/estilos/styleProducts.css' />
     <link rel='stylesheet' type='text/css' media='screen' href='Scripts_js/inicio.js' />
 
     <style>
@@ -109,7 +109,7 @@
              
                   
             </form>
-            
+            <br>
             <form method="POST" action="../Modelos/procesar_consultas_productos.php">
             <div class="div-search">
                     
@@ -154,7 +154,7 @@
                 "<td>".$fila['Stock']."</td>".
                 "<td>".$fila['FK_id_TipoProducto']."</td>".
                 "<td>".$fila['FK_id_Proveedor']."</td>".
-                "<td> <a href='pagina_404.html'><img src='img/edit.png'> </a> &emsp;  <a href='../Modelos/procesar_bajas_productos.php?nc=%s'> <img src='img/trash-can.png'> </a> </td> </tr>", $fila['id_Producto']
+                "<td> <a href='../Vista/pagina_realizar_cambios_productos.php'><img src='img/edit.png'> </a> &emsp;  <a href='../Modelos/procesar_bajas_productos.php?nc=%s'> <img src='img/trash-can.png'> </a> </td> </tr>", $fila['id_Producto']
               
             );
           }
