@@ -91,7 +91,7 @@
             <form method="POST" action="../Modelos/procesar_consultas_productos.php">
             <div class="div-search">
                     
-                    &emsp;&emsp;<input type="text" size="50" id="caja_buscar_producto" name="caja_buscar_producto"/>
+                    &emsp;&emsp;<input  type="text" size="50" id="caja_buscar_producto" name="caja_buscar_producto"/>
                     <br><br>
                 </div>
             </form>
@@ -160,16 +160,11 @@
 
         </section>
     </section>
-    <script>
-        $(document).ready(function(){
-            var table = $('#customers').DataTable({
-                orderCellsTop: true,
-                fixedHeader: true
-            });
-        });
-    </script>    
+       
    
 
 
 </body>
+
+
 </html>
