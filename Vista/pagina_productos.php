@@ -92,15 +92,17 @@
             <div class="div-search">
                     
                     &emsp;&emsp;<input type="text" size="50" id="caja_buscar_producto" name="caja_buscar_producto"/>
-                    <br><br><br><br>
+                    <br><br>
                 </div>
             </form>
 
 
                <!--------------------------------TABLA PRODUCTOS------------------------>
-               <table id="customers">
 
-                <tr> 
+            <div class="scroll">
+               <table id="customers" >
+
+                <tr > 
                     <th>id_Producto</th>
                     <th>Descripción</th>
                     <th>Precio</th>
@@ -151,7 +153,7 @@
             </table>
 
 
-
+            </div>
             </div>
             
          
