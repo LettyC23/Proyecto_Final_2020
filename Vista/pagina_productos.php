@@ -13,7 +13,7 @@
 <body class="main">
     <div class="nav">
         <a href="#" class="active" >INICIO</a> 
-        <a href="#" class="right" ><img src="img/cerrar-sesion.png"></a> 
+        <a class="right" href="../Modelos/cerrar_sesion.php"> <img src="img/cerrar-sesion.png"></a> 
         
     </div>
 
@@ -63,9 +63,21 @@
                     <br>
                     <select id="inputState" class="form-control" name="select_tipo_producto">
                         <option selected>Elige tipo de producto</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
+                        <?php
+                        include('../Conexion_BD/conexion_bd.php');
+
+                        $con = new ConexionBD();
+                        $conexion = $con->getConexion();
+                
+                        $sql = "SELECT id_TipoProducto FROM Tipo_Producto";
+                        
+                        $query = $conexion -> query($sql);
+                        
+                            while($valores = mysqli_fetch_array($query)){
+                                echo '<option>'.$valores['id_TipoProducto'].'</option>';
+                            }
+                            
+                        ?>
                       </select>&emsp;&emsp;
                 </div>
                
@@ -74,9 +86,21 @@
                     <br>
                     <select id="inputState" class="form-control" name="select_proveedor">
                         <option selected>Elige proveedor</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
+                        <?php
+                        
+
+                        $con = new ConexionBD();
+                        $conexion = $con->getConexion();
+                
+                        $sql = "SELECT id_Proveedor FROM Proveedores";
+                        
+                        $query = $conexion -> query($sql);
+                        
+                            while($valores = mysqli_fetch_array($query)){
+                                echo '<option>'.$valores['id_Proveedor'].'</option>';
+                            }
+                           
+                        ?>
                       </select>
                       &emsp;&emsp;<button class="button" type="submit">Guardar producto</button>
                       <br>
@@ -116,7 +140,7 @@
 
                 <?php
 
-        include('../Conexion_BD/conexion_bd.php');
+        
 
         $con = new ConexionBD();
         $conexion = $con->getConexion();

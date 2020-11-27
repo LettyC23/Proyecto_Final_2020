@@ -90,7 +90,7 @@ if(mysqli_num_rows($res)>0){
         </tr>", $fila['id_Producto'], $fila['DescripcionProducto'],  $fila['Precio'],  $fila['Stock'], $fila['id_Producto']
       
     );
-    header('location:../vista/pagina_productos.php');
+    header('location:../Vista/pagina_productos.php');
     }
 }else{
     echo ('No hay datos');
