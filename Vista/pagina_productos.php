@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio</title>
-    <link rel='stylesheet' type='text/css' media='screen' href='Scripts/estilos/style_dashboard.css' />
-    <link rel='stylesheet' type='text/css' media='screen' href='Scripts/estilos/styleProducts.css' />
+    <link rel='stylesheet' type='text/css' media='screen' href='../Vista/Scripts/estilos/style_dashboard.css' />
+    <link rel='stylesheet' type='text/css' media='screen' href='../Vista/Scripts/estilos/styleProducts.css' />
+    <link rel='stylesheet' type='text/css' media='screen' href='Scripts_js/jquery-3.4.1.min.js' />
     
 </head>
 <body class="main">
@@ -33,7 +34,7 @@
         </aside>
 
         <section class="main-productos" >
-     
+   
         
             <!--------------------------------Formulario altas------------------------------------->
             <form method="POST" action="../Modelos/procesar_altas_productos.php">
@@ -111,11 +112,11 @@
                   
             </form  >
             <br>
-            <form method="POST" action="../Modelos/consultas.php" >
+            <form method="POST" action="../Vista/formulario_consultas_productos.php">
             <div class="div-search" >
-                    
-                    &emsp;&emsp;<input  type="text" size="50" id="caja_buscar_producto" name="caja_buscar_producto" >
-                            <button>Buscar</button>
+            
+            <input  type="text" size="50" id="caja_buscar_producto" name="caja_buscar_producto">
+                            <button class="button">Buscar</button>
                     <br><br>
                 </div>
                 
@@ -124,7 +125,7 @@
 
                <!--------------------------------TABLA PRODUCTOS------------------------>
 
-            <div class="scroll">
+            <div class="scroll" >
                <table id="customers" >
 
                 <tr > 
@@ -141,33 +142,31 @@
                 <?php
 
         
-
-        $con = new ConexionBD();
-        $conexion = $con->getConexion();
-        $sql = "SELECT * FROM Productos ";
-
-        $res = mysqli_query($conexion, $sql);
-
-        //var_dump($res);
-
-        if(mysqli_num_rows($res)>0 ){
-          while($fila = mysqli_fetch_assoc($res)){
-                printf("<tr><td>".$fila['id_Producto']."</td>".
-                "<td>".$fila['DescripcionProducto']."</td>".
-                "<td>".$fila['Precio']."</td>".
-                "<td>".$fila['Stock']."</td>".
-                "<td>".$fila['FK_id_TipoProducto']."</td>".
-                "<td>".$fila['FK_id_Proveedor']."</td>".
-                "<td> <a href='../Vista/pagina_realizar_cambios_productos.php?nc=%s&dp=%s&p=%s&s=%s'> <img src='img/edit.png'> </a>" ." </td>".
-                "<td> <a href='../Modelos/procesar_bajas_productos.php?nc=%s'> <img src='img/trash-can.png'> </a> </td> 
-                </tr>", $fila['id_Producto'], $fila['DescripcionProducto'],  $fila['Precio'],  $fila['Stock'], $fila['id_Producto']
-              
-            );
-          }
-        }else{
-          //echo ('no hay datos');
-        }
-
+            $con = new ConexionBD();
+            $conexion = $con->getConexion();
+            $sql1 = "SELECT * FROM Productos ";
+    
+            $res = mysqli_query($conexion, $sql1);
+            if(mysqli_num_rows($res)>0 ){
+                while($fila = mysqli_fetch_assoc($res)){
+                      printf("<tr><td>".$fila['id_Producto']."</td>".
+                      "<td>".$fila['DescripcionProducto']."</td>".
+                      "<td>".$fila['Precio']."</td>".
+                      "<td>".$fila['Stock']."</td>".
+                      "<td>".$fila['FK_id_TipoProducto']."</td>".
+                      "<td>".$fila['FK_id_Proveedor']."</td>".
+                      "<td> <a href='../Vista/pagina_realizar_cambios_productos.php?nc=%s&dp=%s&p=%s&s=%s'> <img src='img/edit.png'> </a>" ." </td>".
+                      "<td> <a href='../Modelos/procesar_bajas_productos.php?nc=%s'> <img src='img/trash-can.png'> </a> </td> 
+                      </tr>", $fila['id_Producto'], $fila['DescripcionProducto'],  $fila['Precio'],  $fila['Stock'], $fila['id_Producto']
+                    
+                  );
+                }
+              }else{
+                echo ('No se encontro resultado de la búsqueda');
+              }
+            
+        
+      
       ?>
 
             </table>

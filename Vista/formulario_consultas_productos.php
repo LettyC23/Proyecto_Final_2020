@@ -1,14 +1,12 @@
-
-
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio</title>
-    <link rel='stylesheet' type='text/css' media='screen' href='../Scripts/estilos/style_dashboard.css' />
-    <link rel='stylesheet' type='text/css' media='screen' href='../Scripts/estilos/styleProducts.css' />
+    <link rel='stylesheet' type='text/css' media='screen' href='Scripts/estilos/style_dashboard.css' />
+    <link rel='stylesheet' type='text/css' media='screen' href='Scripts/estilos/styleProducts.css' />
+    <link rel='stylesheet' type='text/css' media='screen' href='Scripts_js/jquery-3.4.1.min.js' />
     
 </head>
 <body class="main">
@@ -36,13 +34,8 @@
         </aside>
 
         <section class="main-productos" >
-
-        <?php
-            $buscar = $_REQUEST['caja_buscar_producto'];
-            if(empty($buscar)){
-                header("location...Vista/pagina_productos.php");
-            }
-        ?>
+   
+        
             <!--------------------------------Formulario altas------------------------------------->
             <form method="POST" action="../Modelos/procesar_altas_productos.php">
                 <div class="simple_form">
@@ -119,11 +112,11 @@
                   
             </form  >
             <br>
-            <form  method="POST" action="../Modelos/consultas.php">
+            <form >
             <div class="div-search" >
-                    
-                    &emsp;&emsp;<input   type="text" size="50" id="caja_buscar_producto" name="caja_buscar_producto" value="<?php echo $buscar; ?>">
-                            <button>Buscar</button>
+            
+            <input  type="text" size="50" id="caja_buscar_producto" name="caja_buscar_producto">
+                            <button class="button">Buscar</button>
                     <br><br>
                 </div>
                 
@@ -132,7 +125,7 @@
 
                <!--------------------------------TABLA PRODUCTOS------------------------>
 
-            <div class="scroll">
+            <div class="scroll" >
                <table id="customers" >
 
                 <tr > 
@@ -146,40 +139,72 @@
                     <th>Eliminar</th>
                 </tr>
 
-           
-
                 <?php
 
-$parametro = $_POST['caja_buscar_producto'];
-$sql="SELECT * FROM Productos WHERE id_Producto LIKE '%$parametro%'";
-
-
-$con = new ConexionBD();
-$conexion = $con->getConexion();
-
-$res = mysqli_query($conexion, $sql);
-
-
-//var_dump($res);
-
-  while($fila = mysqli_fetch_assoc($res)){
-        printf("<tr><td>".$fila['id_Producto']."</td>".
-        "<td>".$fila['DescripcionProducto']."</td>".
-        "<td>".$fila['Precio']."</td>".
-        "<td>".$fila['Stock']."</td>".
-        "<td>".$fila['FK_id_TipoProducto']."</td>".
-        "<td>".$fila['FK_id_Proveedor']."</td>".
-        "<td> <a href='../Vista/pagina_realizar_cambios_productos.php?nc=%s&dp=%s&p=%s&s=%s'> <img src='img/edit.png'> </a>" ." </td>".
-        "<td> <a href='../Modelos/procesar_bajas_productos.php?nc=%s'> <img src='img/trash-can.png'> </a> </td> 
-        </tr>", $fila['id_Producto'], $fila['DescripcionProducto'],  $fila['Precio'],  $fila['Stock'], $fila['id_Producto']
+        
+        $parametro = $_REQUEST['caja_buscar_producto'];
+    
+        $b=$parametro;
+        //var_dump($res);
+        if(!empty($b)){
+            
+            $sql1="SELECT * FROM Productos WHERE id_Producto LIKE '%$parametro%'";
+            
+            
+            $con = new ConexionBD();
+            $conexion = $con->getConexion();
+            
+            $res = mysqli_query($conexion, $sql1);
+            
+            
+            //var_dump($res);
+            if(mysqli_num_rows($res)>0 ){
+              while($fila = mysqli_fetch_assoc($res)){
+                    printf("<tr><td>".$fila['id_Producto']."</td>".
+                    "<td>".$fila['DescripcionProducto']."</td>".
+                    "<td>".$fila['Precio']."</td>".
+                    "<td>".$fila['Stock']."</td>".
+                    "<td>".$fila['FK_id_TipoProducto']."</td>".
+                    "<td>".$fila['FK_id_Proveedor']."</td>".
+                    "<td> <a href='../Vista/pagina_realizar_cambios_productos.php?nc=%s&dp=%s&p=%s&s=%s'> <img src='img/edit.png'> </a>" ." </td>".
+                    "<td> <a href='../Modelos/procesar_bajas_productos.php?nc=%s'> <img src='img/trash-can.png'> </a> </td> 
+                    </tr>", $fila['id_Producto'], $fila['DescripcionProducto'],  $fila['Precio'],  $fila['Stock'], $fila['id_Producto']
+                  
+                );
+            }
+        }else{
+          echo ('No se encontro resultado de la búsqueda');
+        }
+        
+    }else {
+           
+            $con = new ConexionBD();
+            $conexion = $con->getConexion();
+            $sql1 = "SELECT * FROM Productos ";
+    
+            $res = mysqli_query($conexion, $sql1);
+            if(mysqli_num_rows($res)>0 ){
+                while($fila = mysqli_fetch_assoc($res)){
+                      printf("<tr><td>".$fila['id_Producto']."</td>".
+                      "<td>".$fila['DescripcionProducto']."</td>".
+                      "<td>".$fila['Precio']."</td>".
+                      "<td>".$fila['Stock']."</td>".
+                      "<td>".$fila['FK_id_TipoProducto']."</td>".
+                      "<td>".$fila['FK_id_Proveedor']."</td>".
+                      "<td> <a href='../Vista/pagina_realizar_cambios_productos.php?nc=%s&dp=%s&p=%s&s=%s'> <img src='img/edit.png'> </a>" ." </td>".
+                      "<td> <a href='../Modelos/procesar_bajas_productos.php?nc=%s'> <img src='img/trash-can.png'> </a> </td> 
+                      </tr>", $fila['id_Producto'], $fila['DescripcionProducto'],  $fila['Precio'],  $fila['Stock'], $fila['id_Producto']
+                    
+                  );
+                }
+              }else{
+                echo ('No se encontro resultado de la búsqueda');
+              }
+            
+        }
       
-    );
-  }
-  //header('location:../Vista/pagina_productos.php');
+      ?>
 
-
-
-?>
             </table>
 
 

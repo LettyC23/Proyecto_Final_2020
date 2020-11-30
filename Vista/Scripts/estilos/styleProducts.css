@@ -10,9 +10,8 @@ section {
     display: inline;
 }
 
-.div-search{
-    text-align: center;
-    width: 100%;
+.right{
+    float: right;
 }
 
 
@@ -78,6 +77,8 @@ section {
     cursor: pointer;
     }
     
+
+
     .button:hover{
     background: #f47c20;
     background: -moz-linear-gradient(top, #f88e11, #f06015);
