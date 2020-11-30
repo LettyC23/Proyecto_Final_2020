@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio</title>
     <link rel='stylesheet' type='text/css' media='screen' href='Scripts/estilos/style_dashboard.css' />
-    <link rel='stylesheet' type='text/css' media='screen' href='Scripts_js/inicio.js' />
 </head>
 <body class="main">
     <div class="nav">
@@ -19,9 +18,9 @@
             <div class="nav">
                 <nav>
                 <ul>
-                    <li><a href="pagina_dashboard.html"> <img src="img/pagina-principal.png">&emsp; Inicio</a></li>
+                    <li><a  href="pagina_dashboard.html"> <img src="img/pagina-principal.png">&emsp; Inicio</a></li>
                     <li><a href="pagina_productos.php"> <img src="img/store.png">  Productos</a></li>
-                    <li><a href="pagina_clientes.html"> <img src="img/user (1).png"> &emsp;Clientes</a></li>
+                    <li ><a href="pagina_clientes.html"> <img src="img/user (1).png"> &emsp;Clientes</a>                    </li>
                     <li><a href="#"> <img src="img/user (1).png">  Usuarios</a></li>
                     <li><a href="#"> <img src="img/delivery-truck (1).png"> Proveedores</a></li>
                     <li><a href="#"> <img src="img/configuracion.png">&emsp; Ajustes</a></li>
