@@ -13,8 +13,8 @@
         $this->conexion = mysqli_connect($this->host, $this->usuario, $this->contraseña, $this->bd);
      
         if($this->conexion){
-            echo "Conexion establecida :) ";
-            echo "<br>";
+            //echo "Conexion establecida :) ";
+            //echo "<br>";
         }else{
              die("Error en conexion: ".mysqli_connect_error().mysqli_connect_errno());
         }  
