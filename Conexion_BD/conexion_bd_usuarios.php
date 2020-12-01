@@ -4,7 +4,7 @@
         private $conexion;
 
         private $host='localhost:3308';
-        private $usuario='lety';
+        private $usuario='Lety';
         private $contraseña='lacc1';
         private $bd = 'Usuarios_Sistema_Facturacion';
 
