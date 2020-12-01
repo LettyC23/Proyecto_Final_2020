@@ -56,10 +56,25 @@
                     <label> Tipo de producto </label>
                     <br>
                     <select id='inputState' class='form-control' name='select_editar_tipo_producto' values='$id_producto'>
-                        <option selected>Elige tipo de producto</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
+                        <option selected>Elige tipo de producto</option>"
+                        ?>
+                        <?php
+                        
+
+                        $con = new ConexionBD();
+                        $conexion = $con->getConexion();
+                
+                        $sql = "SELECT id_TipoProducto FROM Tipo_Producto";
+                        
+                        $query = $conexion -> query($sql);
+                        
+                            while($valores = mysqli_fetch_array($query)){
+                                echo '<option>'.$valores['id_TipoProducto'].'</option>';
+                            }
+                            
+                        ?>
+                        <?php
+                        echo"
                       </select>
                 </div>
                
@@ -67,11 +82,26 @@
                 &emsp;&emsp;<label> Proveedor </label>
                     <br>
                     &emsp;&emsp;<select id='inputState' class='form-control' name='select_editar_proveedor' value='$id_proveedor'>
-                        <option selected>Elige proveedor</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                      </select>
+                    <option selected>Elige proveedor</option>"
+                    ?>
+                    <?php
+                    
+
+                    $con = new ConexionBD();
+                    $conexion = $con->getConexion();
+            
+                    $sql = 'SELECT id_Proveedor FROM Proveedores';
+                    
+                    $query = $conexion -> query($sql);
+                    
+                        while($valores = mysqli_fetch_array($query)){
+                            echo '<option>'.$valores['id_Proveedor'].'</option>';
+                        }
+                       
+                    ?>
+                    <?php
+                    echo"
+                  </select>
                       <br>
                       <br>
                       <br>

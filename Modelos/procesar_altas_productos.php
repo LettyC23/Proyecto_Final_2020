@@ -7,8 +7,8 @@
   $desc = $_POST['caja_descripcion_producto'];
   $precio = $_POST['caja_precio'];
   $stock = $_POST['caja_existencias'];
-  $idproducto = 1;
-  $idproveedor = 1;
+  $idproducto = $_REQUEST['select_tipo_producto'];
+  $idproveedor = $_REQUEST['select_proveedor'];
   
 
   $productoDAO = new productoDAO();
