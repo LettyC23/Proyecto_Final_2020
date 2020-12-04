@@ -43,7 +43,7 @@
     <button type="submit" class="button">  Registrar </button><br>
 
 
-    <p class="regtext">Ya tienes una cuenta? <a href="pagina_iniciarSesion.html" >Entra Aquí!</a>!</p>
+    <p class="regtext">Ya tienes una cuenta? <a href="formulario_iniciarSesion.php" >Entra Aquí!</a>!</p>
 </form>
 
 

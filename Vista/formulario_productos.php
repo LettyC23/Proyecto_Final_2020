@@ -12,33 +12,33 @@
     <link rel='stylesheet' type='text/css' media='screen' href='../Vista/Scripts/estilos/styleProducts.css' />
     
 </head>
-<body class="main">
-    <div class="nav">
-        <a href="#" class="active" >INICIO</a> 
-        <a class="right" href="../Modelos/cerrar_sesion.php"> <img src="img/cerrar-sesion.png"></a> 
+<body >
+<div class="nav">
+        <a href="#" class="active" >INICIO</a>
+        <a href="formulario_cambios_usuarios.php" class="right" >Mi Cuenta &emsp;&emsp;</a>  
+        <a href="../Modelos/cerrar_sesion.php" class="right" >Cerrar Sesión &emsp;&emsp;</a> 
         
     </div>
-
-    <section>
-        <aside>
+    <section class="main">
+    <aside>
             <div class="nav">
                 <nav>
                 <ul>
-                <li><a href="pagina_dashboard.html"> <img src="img/pagina-principal.png">&emsp; Inicio</a></li>
-                    <li><a href="pagina_productos.php"> <img src="img/store.png">  Productos</a></li>
-                    <li><a href="pagina_clientes.html"> <img src="img/user (1).png"> &emsp;Clientes</a></li>
-                    <li><a href="#"> <img src="img/user (1).png">  Usuarios</a></li>
+                <li><a href="formulario_dashboard.php"> <img src="img/pagina-principal.png">&emsp; Inicio</a></li>
+                    <li><a href="formulario_productos.php"> <img src="img/store.png">  Productos</a></li>
+                    <li><a href="formulario_clientes.html"> <img src="img/user (1).png"> &emsp;Clientes</a>                    </li>
+                    <li><a href="formulario_usuarios.php"> <img src="img/user (1).png">  Usuarios</a></li>
                     <li><a href="#"> <img src="img/delivery-truck (1).png"> Proveedores</a></li>
                     <li><a href="#"> <img src="img/configuracion.png">&emsp; Ajustes</a></li>
-                    <li><a href="#">Salir</a></li>
+                    
                 </ul>
             </nav>
         </div>
         </aside>
 
-        <section class="main-productos" >
+        <section class="wrapper">
    
-        
+        <div class="wrapper" >
             <!--------------------------------Formulario altas------------------------------------->
             <form  id="formulario_productos" method="POST" action="../Modelos/procesar_altas_productos.php"  onsubmit="return validarFormularioProductos()">
                 <div class="simple_form">
@@ -154,7 +154,7 @@
                            
                         ?>
                       </select>
-                      <br>
+                      
                       <span style="color:red;">
                      <?php  
                         if(isset($_SESSION['errorIdProvedor'])) {
@@ -175,11 +175,12 @@
              
                   
             </form  >
+                    </div>
             <br>
             <form method="POST" action="../Vista/formulario_consultas_productos.php">
             <div class="div-search" >
             
-            <input  type="text" size="50" id="caja_buscar_producto" name="caja_buscar_producto">
+            <input  type="text" size="40" id="caja_buscar_producto" name="caja_buscar_producto">
                             <button class="button">Buscar</button>
                     <br><br>
                 </div>
@@ -188,9 +189,9 @@
 
 
                <!--------------------------------TABLA PRODUCTOS------------------------>
-
+                        <div  class="card-content">
             <div class="scroll" >
-               <table id="customers" >
+               <table id="customers">
 
                 <tr > 
                     <th>id_Producto</th>

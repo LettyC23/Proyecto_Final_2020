@@ -40,8 +40,8 @@
     </p>
 
 
-    <a href="pagina_dashboard.php"  class="button">  Cancelar  </a>&emsp;&emsp;
-    <a href="pagina_dashboard.php" class="button">  Guardar </a>
+    <a href="formulario_dashboard.php"  class="button">  Cancelar  </a>&emsp;&emsp;
+    <a href="formulario_dashboard.php" class="button">  Guardar </a>
 </form>
 
 
