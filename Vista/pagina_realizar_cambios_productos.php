@@ -20,9 +20,8 @@
                 $descripcion = $_GET['dp'];
                 $precio = $_GET['p'];;
                 $stock = $_GET['s'];;
-                $id_producto = 1;
-                $id_proveedor = 1;
-
+                $id_producto = $_GET['pd'];
+                $id_proveedor = $_GET['pv'];
                 
                 
             echo "    <div class='mlogin'>
@@ -55,9 +54,24 @@
                 <div class='left'>
                     <label> Tipo de producto </label>
                     <br>
-                    <select id='inputState' class='form-control' name='select_editar_tipo_producto' values='$id_producto'>
-                        <option selected>Elige tipo de producto</option>"
-                        ?>
+                    <select id='inputState' class='form-control' name='select_editar_tipo_producto' >
+                        <option  selected>"?>
+                        <?php
+                        
+
+                        $con = new ConexionBD();
+                        $conexion = $con->getConexion();
+                
+                        $sql = "SELECT id_TipoProducto FROM Tipo_Producto WHERE id_TipoProducto ='$id_producto'";
+                        
+                        $query = $conexion -> query($sql);
+                        
+                            while($valores = mysqli_fetch_array($query)){
+                                echo ''.$valores['id_TipoProducto'].'';
+                            }
+                            
+                        ?> </option>"
+                        
                         <?php
                         
 
@@ -82,8 +96,23 @@
                 &emsp;&emsp;<label> Proveedor </label>
                     <br>
                     &emsp;&emsp;<select id='inputState' class='form-control' name='select_editar_proveedor' value='$id_proveedor'>
-                    <option selected>Elige proveedor</option>"
-                    ?>
+                    <option selected>"?>
+                    <?php
+                    
+
+                    $con = new ConexionBD();
+                    $conexion = $con->getConexion();
+            
+                    $sql = "SELECT id_Proveedor FROM Proveedores WHERE id_Proveedor ='$id_proveedor'";
+                    
+                    $query = $conexion -> query($sql);
+                    
+                        while($valores = mysqli_fetch_array($query)){
+                            echo ''.$valores['id_Proveedor'].'';
+                        }
+                        
+                    ?></option>"
+                    
                     <?php
                     
 

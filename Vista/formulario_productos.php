@@ -220,9 +220,9 @@
                       "<td>".$fila['Stock']."</td>".
                       "<td>".$fila['FK_id_TipoProducto']."</td>".
                       "<td>".$fila['FK_id_Proveedor']."</td>".
-                      "<td> <a href='../Vista/pagina_realizar_cambios_productos.php?nc=%s&dp=%s&p=%s&s=%s'> <img src='img/edit.png'> </a>" ." </td>".
+                      "<td> <a href='../Vista/pagina_realizar_cambios_productos.php?nc=%s&dp=%s&p=%s&s=%s&pd=%s&pv=%s'> <img src='img/edit.png'> </a>" ." </td>".
                       "<td> <a href='../Modelos/procesar_bajas_productos.php?nc=%s'> <img src='img/trash-can.png'> </a> </td> 
-                      </tr>", $fila['id_Producto'], $fila['DescripcionProducto'],  $fila['Precio'],  $fila['Stock'], $fila['id_Producto']
+                      </tr>", $fila['id_Producto'], $fila['DescripcionProducto'],  $fila['Precio'],  $fila['Stock'], $fila['FK_id_TipoProducto'], $fila['FK_id_Proveedor'], $fila['id_Producto']
                     
                   );
                 }
