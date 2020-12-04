@@ -148,7 +148,9 @@
         //var_dump($res);
         if(!empty($b)){
             
-            $sql1="SELECT * FROM Productos WHERE id_Producto LIKE '%$parametro%'";
+            $sql1="SELECT * FROM Productos WHERE id_Producto LIKE '%$parametro%' OR DescripcionProducto LIKE '%$parametro%'
+            OR Precio LIKE '%$parametro%'  OR Stock LIKE '%$parametro%' OR FK_id_TipoProducto LIKE '%$parametro%' OR 
+            FK_id_Proveedor LIKE '%$parametro%'";
             
             
             $con = new ConexionBD();
