@@ -15,11 +15,14 @@ class ProductoDAO{
         $sql= "INSERT INTO Productos VALUES ('$id', '$descripcion','$precio','$stock','$id_producto', '$id_proveedor');";
         if(mysqli_query($this->conexion->getConexion(),$sql)  ){
             echo("<script> alert('Agregado con Exito')</script>");
-            header('location:../vista/pagina_productos.php');
+            header('location:../Vista/pagina_productos.php');
             //echo "PREFECTO, CASI SOY ISC =)";
         }else{
-            echo "¿SERA MUY TARDE PARA CAMBIAR DE CARRERA??? =(";
+           
+            //echo("<script> alert('Seleccione Tipo de producto y Proveedor')</script>");
+            header('location:../Vista/pagina_productos.php');
             echo mysqli_error($this->conexion->getConexion());
+            
         }
     }//agregar
 

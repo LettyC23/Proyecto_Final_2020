@@ -1,5 +1,5 @@
 <?php
-
+  session_start();
   include('../Controladores/ProductoDAO.php');
   //validacion de datos
 
@@ -10,12 +10,28 @@
   $idproducto = $_REQUEST['select_tipo_producto'];
   $idproveedor = $_REQUEST['select_proveedor'];
   
+  $datos_validos = false;
 
-  $productoDAO = new productoDAO();
+  if($idproducto==0 ){
+    $_SESSION['errorIdProducto'] = "*Selecciona tipo de producto";
+    $_SESSION['datoIdProvedor'] = $idproducto;
+  }
 
-  $productoDAO->agregarProducto($id, $desc, $precio, $stock, $idproducto, $idproveedor);
-
-
-
-
+  if($idproveedor==0){
+    $_SESSION['errorIdProvedor'] = "*Selecciona un proveedor";
+    $_SESSION['datoIdProvedor'] = $idproveedor;
+  }
+  
+  
+  $_SESSION['datoDescripcion'] = $desc;
+  $_SESSION['datoPrecio'] = $precio;
+  $_SESSION['datoStock'] = $stock; 
+  
+    $productoDAO = new productoDAO();
+    $productoDAO->agregarProducto($id, $desc, $precio, $stock, $idproducto, $idproveedor);
+ 
+    header('location../Vista/pagina_productos.php');
+  
+  
+  
 ?>

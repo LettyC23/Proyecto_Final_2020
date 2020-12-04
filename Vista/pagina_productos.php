@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -6,7 +10,6 @@
     <title>Inicio</title>
     <link rel='stylesheet' type='text/css' media='screen' href='../Vista/Scripts/estilos/style_dashboard.css' />
     <link rel='stylesheet' type='text/css' media='screen' href='../Vista/Scripts/estilos/styleProducts.css' />
-    <link rel='stylesheet' type='text/css' media='screen' href='Scripts_js/jquery-3.4.1.min.js' />
     
 </head>
 <body class="main">
@@ -37,32 +40,68 @@
    
         
             <!--------------------------------Formulario altas------------------------------------->
-            <form method="POST" action="../Modelos/procesar_altas_productos.php">
+            <form  id="formulario_productos" method="POST" action="../Modelos/procesar_altas_productos.php"  onsubmit="return validarFormularioProductos()">
                 <div class="simple_form">
                     <h2>Administrar Productos</h2>
                     <br>
                     <div class="left">
                     &emsp;&emsp;&emsp;<label>Descripción</label>&emsp;
                     <br>
-                    <input type="text"  id="caja_descripcion_producto" name="caja_descripcion_producto"/>
+                    <input type="text"  id="caja_descripcion_producto" name="caja_descripcion_producto" 
+                    value="<?php  
+                     
+                     if(isset($_SESSION['datoDescripcion'])) {
+                        echo $_SESSION['datoDescripcion']; 
+                        }else{
+                            echo "";
+                        }
+                        unset($_SESSION['datoDescripcion']);
+                        ?>" required >
                 </div>
                 <div class="left">
                     &emsp;&emsp;<label>Precio </label>&emsp;
                     <br>
-                    <input type="text" size="9" id="caja_precio" name="caja_precio"/>
+                    <input type="number" size="9" id="caja_precio" name="caja_precio" required="" step="0.01" 
+                    value="<?php  
+                     
+                     if(isset($_SESSION['datoPrecio'])) {
+                        echo $_SESSION['datoPrecio']; 
+                        }else{
+                            echo "";
+                        }
+                        unset($_SESSION['datoPrecio']);
+                        ?>">
                 </div>
                  
                 <div class="left"> 
                     &ensp;<label> Existencias </label>
                     <br>
-                    <input type="text" size="10" id="caja_existencias" name="caja_existencias"/>
+                    <input type="number" size="10" id="caja_existencias" name="caja_existencias" required
+                    value="<?php  
+                     
+                     if(isset($_SESSION['datoStock'])) {
+                        echo $_SESSION['datoStock']; 
+                        }else{
+                            echo "";
+                        }
+                        unset($_SESSION['datoStock']);
+                        ?>">
                 </div>
                     
                 <div class="left">
                     &emsp; <label> Tipo de producto </label>
                     <br>
-                    <select id="inputState" class="form-control" name="select_tipo_producto">
-                        <option selected>Elige tipo de producto</option>
+                    <select id="select_tipo_producto" class="form-control" name="select_tipo_producto" >
+                        <option value="<?php  
+                     
+                     if(isset($_SESSION['datoIdProducto'])) {
+                        echo $_SESSION['datoIdProducto']; 
+                        }else{
+                            echo "";
+                        }
+                        unset($_SESSION['datoIdProducto']);
+                        ?>" >Elige tipo de producto</option>
+                        
                         <?php
                         include('../Conexion_BD/conexion_bd.php');
 
@@ -79,13 +118,26 @@
                             
                         ?>
                       </select>&emsp;&emsp;
+                      <br>
+                      <span style="color:red;">
+                     <?php  
+                     
+                     if(isset($_SESSION['errorIdProducto'])) {
+                        echo $_SESSION['errorIdProducto']; 
+                        }else{
+                            echo "";
+                        }
+                        unset($_SESSION['errorIdProducto']);
+                        ?>
+                        </span>
+                        
                 </div>
                
                 <div  class="left">
                     &emsp;<label> Proveedor </label>
                     <br>
-                    <select id="inputState" class="form-control" name="select_proveedor">
-                        <option selected>Elige proveedor</option>
+                    <select id="select_proveedor" class="form-control" name="select_proveedor">
+                        <option value="0">Elige proveedor</option>
                         <?php
                         
 
@@ -102,6 +154,18 @@
                            
                         ?>
                       </select>
+                      <br>
+                      <span style="color:red;">
+                     <?php  
+                        if(isset($_SESSION['errorIdProvedor'])) {
+                        echo $_SESSION['errorIdProvedor']; 
+                        }else{
+                            echo "";
+                        }
+                        unset($_SESSION['errorIdProvedor']);
+                    ?>
+                    </span>
+                      
                       &emsp;&emsp;<button class="button" type="submit">Guardar producto</button>
                       <br>
                       <br>
