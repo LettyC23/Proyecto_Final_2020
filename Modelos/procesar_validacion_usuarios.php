@@ -5,6 +5,7 @@ include('../Conexion_BD/conexion_bd_usuarios.php');
     $con = new ConexionBD();
     $conexion = $con->getConexion();
 
+    if($conexion){
         $usuario = $_POST['caja_usuario'];
         $contraseña = $_POST['caja_contraseña'];
 
@@ -14,13 +15,15 @@ include('../Conexion_BD/conexion_bd_usuarios.php');
     $sql = "SELECT * FROM Usuarios WHERE NombreDeUsuario='$usuario_cifrado' AND Contrasenia='$contraseña_cifrado'";
 
     $res = mysqli_query($conexion, $sql);
-    var_dump($contraseña_cifrado);
     if(mysqli_num_rows($res)>0){
-        echo "si";
+        session_start();
+        $_SESSION['autenticado'] = true;
+        $_SESSION['usuario'] = $usuario;
+        header('location../Vista/formulario_dashboard.php');
+        echo"si";
     }else{
-        echo"no";
-        
+        header('location../Vista/formulario_IniciarSesion.php');
     }
 
-    
+}
 ?>

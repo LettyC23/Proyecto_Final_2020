@@ -31,3 +31,17 @@ function validarFormularioProductos(){
     return true;
 }
 
+function validarIniciarSesion(){
+    var usuario = document.getElementById('caja_usuario').value;
+    var contraseña = document.getElementById('caja_contraseña').value;
+
+    if(usuario==null || usuario.length==0 ){
+        return false;
+    }
+
+    if(contraseña==null || contraseña.length==0 ){
+        return false;
+    }
+
+    return true;
+}

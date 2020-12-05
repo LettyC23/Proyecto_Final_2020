@@ -22,17 +22,17 @@
     <div class="form-group">
         <div >
         <h1> <img src="img/user.png"> <br> Iniciar Sesión</h1>
-        <form name="loginform" id="loginform" action="../Modelos/procesar_validacion_usuarios.php" method="POST">
+        <form name="loginform" id="loginform"method="POST" action="../Modelos/procesar_validacion_usuarios.php" onsubmit="return validarIniciarSesion()">
             <p>
                 <label for="user_login">Nombre De Usuario<br />
-                <input type="text" name="caja_usuario" id="caja_usuario" class="input" value="" size="20" /></label>
+                <input type="text" name="caja_usuario" id="caja_usuario" class="input" value="" size="20" required></label>
             </p>
             <p>
                 <label for="user_pass">Contraseña<br />
-                <input type="password" name="caja_contraseña" id="caja_contraseña" class="input" value="" size="20" /></label>
+                <input type="password" name="caja_contraseña" id="caja_contraseña" class="input" value="" size="20" required></label>
             </p>
             <button type="submit" class="button"><i class="fas fa-sign-in-alt"></i>  Ingresar </button><br>
-            <p class="regtext">No estas registrado? <a href="formulario_registrar_usuario.php">Registrate Aquí</a>!</p>
+            <p class="regtext">No estas registrado? <a >Registrate Aquí</a>!</p>
         </form>
         
         </div>
