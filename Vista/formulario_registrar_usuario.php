@@ -40,10 +40,10 @@
     </p>
 
 
-    <button type="submit" class="button">  Registrar </button><br>
+    <button type="submit" class="button" >  Registrar </button><br>
 
 
-    <p class="regtext">Ya tienes una cuenta? <a href="formulario_iniciarSesion.php" >Entra Aquí!</a>!</p>
+    <p class="regtext">Ya tienes una cuenta? <a href="formulario_IniciarSesion.php" >Entra Aquí!</a>!</p>
 </form>
 
 

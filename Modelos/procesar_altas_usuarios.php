@@ -15,6 +15,6 @@
   $usuarioDAO->agregarUsuario($id, $nombreUsuario, $correo, $nombreDeUsuario, $contraseña);
 
 
-
+header('location../Vista/formulario_IniciarSesion.php')
 
 ?>

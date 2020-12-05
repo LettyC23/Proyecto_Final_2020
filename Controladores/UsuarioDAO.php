@@ -12,10 +12,10 @@ class UsuarioDAO{
       //--------------------------------------- ALTAS -------------------------------------------
 
       public function agregarUsuario($id, $nombreUsuario, $correo, $nombreDeUsuario, $contraseña){
-        $sql= "INSERT INTO Usuarios VALUES ('$id', '$nombreUsuario','$correo','$nombreDeUusario','$contraseña');";
+        $sql= "INSERT INTO Usuarios VALUES ('$id', '$nombreUsuario','$correo',SHA1('$nombreDeUsuario'),SHA1('$contraseña'));";
         if(mysqli_query($this->conexion->getConexion(),$sql)  ){
-            echo("<script> alert('Agregado con Exito')</script>");
-            header('location:../Vista/pagina_IniciarSesion.html');
+            //echo("<script> alert('Agregado con Exito')</script>");
+            header('location:../Vista/formulario_IniciarSesion.php');
             //echo "PREFECTO, CASI SOY ISC =)";
         }else{
             echo "¿SERA MUY TARDE PARA CAMBIAR DE CARRERA??? =(";
