@@ -15,15 +15,18 @@ include('../Conexion_BD/conexion_bd_usuarios.php');
     $sql = "SELECT * FROM Usuarios WHERE NombreDeUsuario='$usuario_cifrado' AND Contrasenia='$contraseña_cifrado'";
 
     $res = mysqli_query($conexion, $sql);
+
     if(mysqli_num_rows($res)>0){
         session_start();
         $_SESSION['autenticado'] = true;
         $_SESSION['usuario'] = $usuario;
-        header('location../Vista/formulario_dashboard.php');
-        echo"si";
+        
+        header('location:../Vista/formulario_dashboard.php');
+        
     }else{
-        header('location../Vista/formulario_IniciarSesion.php');
+        header('location:../Vista/formulario_IniciarSesion.php');
     }
+    
 
 }
 ?>

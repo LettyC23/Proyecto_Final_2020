@@ -1,7 +1,7 @@
 <?php
     session_start();
     if($_SESSION['autenticado'] == false){
-        header("location../Vista/formulario_IniciarSesion.php");
+        header("location:../Vista/formulario_IniciarSesion.php");
     }
 ?>
 
