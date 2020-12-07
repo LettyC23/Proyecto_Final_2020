@@ -45,3 +45,27 @@ function validarIniciarSesion(){
 
     return true;
 }
+
+function validarRegistrarUsuario(){
+    var nombre = document.getElementById('caja_nombre_completo').value;
+    var correo = document.getElementById('caja_email').value;
+    var usuario = document.getElementById('caja_nombre_usuario').value;
+    var contraseña = document.getElementById('caja_password').value;
+
+    if(nombre=="1" || nombre.length==0 || /^\s+$/.test(nombre)){
+        return false;
+    }
+
+    if(correo==null || correo.length==0 ){
+        return false;
+    }
+
+    if(usuario==null || usuario.length==0 ){
+        return false;
+    }
+
+    if(contraseña==null || contraseña.length==0 ){
+        return false;
+    }
+    return true;
+}
