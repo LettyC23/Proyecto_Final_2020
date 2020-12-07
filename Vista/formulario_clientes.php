@@ -42,7 +42,7 @@
    
         <div class="wrapper" >
             <!--------------------------------Formulario altas------------------------------------->
-            <form  id="formulario_productos" method="POST" action="../Modelos/procesar_altas_clientes.php"  ">
+            <form  id="formulario_productos" method="POST" action="../Modelos/procesar_altas_clientes.php"  onsubmit="return validarFormularioClientes()">
                 <div class="simple_form">
                     <h2>Administrar Clientes</h2>
                     <br>
@@ -59,6 +59,18 @@
                         }
                         unset($_SESSION['datoNom']);
                         ?>" required >
+                        <br>
+                        <span style="color:red;">
+                     <?php  
+                     
+                     if(isset($_SESSION['errorNom'])) {
+                        echo $_SESSION['errorNom']; 
+                        }else{
+                            echo "";
+                        }
+                        unset($_SESSION['errorNom']);
+                        ?>
+                        </span>
                 </div>
                 <div class="left">
                     &emsp;&emsp;<label>Dirección </label>&emsp;

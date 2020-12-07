@@ -9,24 +9,38 @@
   $telefono = $_POST['caja_telefono_cliente'];
   $correo = $_POST['caja_correo_cliente'];
   
-  
+  $datos_validos = true;
+  if(is_numeric($nombre)){
+    $_SESSION['errorNom'] = "Solo letras";
+    $_SESSION['datoNom'] = $nombre;
+    $datos_validos = false;
+    $_SESSION['datoNom'] = $nombre;
+  $_SESSION['datoTel'] = $telefono;
+  $_SESSION['datoDir'] = $direccion;
+  $_SESSION['datoCorreo'] = $correo;
+  }
  
-  if( strlen($telefono)>10 ||  strlen($telefono)<10){
+  if(strlen($telefono)!=10 ){
     
     $_SESSION['errorTel'] = "Deben ser 10 dígitos";
     $_SESSION['datoTel'] = $telefono;
-    header('location:../Vista/formulario_clientes.php');
+    $datos_validos = false;
     $_SESSION['datoNom'] = $nombre;
-    $_SESSION['datoDir'] = $direccion;
-    $_SESSION['datoCorreo'] = $correo;
+  $_SESSION['datoTel'] = $telefono;
+  $_SESSION['datoDir'] = $direccion;
+  $_SESSION['datoCorreo'] = $correo;
+  }
 
 
-  }else {
+  
+  header('location:../Vista/formulario_clientes.php');
+  
+
+if($datos_validos==true){
     $productoDAO = new ClienteDAO();
     $productoDAO->agregarCliente($id, $nombre, $direccion, $telefono, $correo);
  
-    header('location:../Vista/formulario_clientes.php');
-  
-  }
+    header('location:../Vista/formulario_clientes.php');}
+
   
 ?>

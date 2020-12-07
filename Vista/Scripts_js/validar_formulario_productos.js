@@ -3,7 +3,7 @@ function validarFormularioProductos(){
     var precio = document.getElementById('caja_precio').value;
     var existencias = document.getElementById('caja_existencias').value;
    
-    if(descripcion==null || descripcion.length==0 || /^\s+$/.test(descripcion)){
+    if(descripcion==null || descripcion.length==0 ||   /^\d+$/.test(descripcion)){
         return false;
     }
 
@@ -69,3 +69,13 @@ function validarRegistrarUsuario(){
     }
     return true;
 }
+
+function validarFormularioClientes(){
+    var nombre = document.getElementById('caja_nombre_cliente').value;
+    if(nombre==null || nombre.length==0 || /^\s+$/.test(nombre)){
+        return false;
+    }
+}
+
+
+
