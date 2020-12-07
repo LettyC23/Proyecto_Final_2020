@@ -124,7 +124,7 @@
                       "<td>".$fila['Telefono']."</td>".
                       "<td>".$fila['Correo']."</td>".
                       "<td> <a href='../Vista/pagina_realizar_cambios_productos.php?id=%s&nc=%s&d=%s&t=%s&c=%s'> <img src='img/edit.png'> </a>" ." </td>".
-                      "<td> <a href='../Modelos/procesar_bajas_productos.php?id=%s'> <img src='img/trash-can.png'> </a> </td> 
+                      "<td> <a href='../Modelos/procesar_bajas_clientes.php?id=%s'> <img src='img/trash-can.png'> </a> </td> 
                       </tr>", $fila['id_Cliente'], $fila['NombreCliente'],  $fila['Direccion'],  $fila['Telefono'], $fila['Correo'], $fila['id_Cliente']
                     
                   );
