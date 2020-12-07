@@ -73,26 +73,56 @@
                 <?php
 
             include('../Conexion_BD/conexion_bd_usuarios.php');
-            $con = new ConexionBD();
-            $conexion = $con->getConexion();
-            $sql1 = "SELECT * FROM Usuarios";
+            $parametro = $_REQUEST['caja_buscar_usuario'];
     
-            $res = mysqli_query($conexion, $sql1);
-            if(mysqli_num_rows($res)>0 ){
-                while($fila = mysqli_fetch_assoc($res)){
-                      printf("<tr><td>".$fila['id_Usuario']."</td>".
-                      "<td>".$fila['NombreUsuario']."</td>".
-                      "<td>".$fila['Correo']."</td>"
-                  );
+            $b=$parametro;
+            //var_dump($res);
+            if(!empty($b)){
+                
+                $sql1="SELECT * FROM Usuarios WHERE id_Usuario LIKE '%$parametro%' OR NombreUsuario LIKE '%$parametro%'
+                OR Correo LIKE '%$parametro%'";
+                
+                
+                $con = new ConexionBD();
+                $conexion = $con->getConexion();
+                
+                $res = mysqli_query($conexion, $sql1);
+                
+                
+                //var_dump($res);
+                if(mysqli_num_rows($res)>0 ){
+                  while($fila = mysqli_fetch_assoc($res)){
+                    printf("<tr><td>".$fila['id_Usuario']."</td>".
+                    "<td>".$fila['NombreUsuario']."</td>".
+                    "<td>".$fila['Correo']."</td>"
+                    );
                 }
-              }else{
-                echo ('No se encontro resultado de la búsqueda');
-              }
+            }else{
+              echo ('No se encontro resultado de la búsqueda');
+            }
             
+        }else {
+               
+                $con = new ConexionBD();
+                $conexion = $con->getConexion();
+                $sql1 = "SELECT * FROM Usuarios ";
         
-      
-      ?>
-
+                $res = mysqli_query($conexion, $sql1);
+                if(mysqli_num_rows($res)>0 ){
+                    while($fila = mysqli_fetch_assoc($res)){
+                        printf("<tr><td>".$fila['id_Usuario']."</td>".
+                        "<td>".$fila['NombreUsuario']."</td>".
+                        "<td>".$fila['Correo']."</td>"
+                      );
+                    }
+                  }else{
+                    echo ('No se encontro resultado de la búsqueda');
+                  }
+                
+            }
+          
+          ?>
+    
             </table>
 
 
