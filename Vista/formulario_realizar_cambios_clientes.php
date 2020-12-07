@@ -14,7 +14,7 @@
 
                 include('../Controladores/ClienteDAO.php');
                 //validacion de datos
-                $aDAO = new ProductoDAO();
+                $aDAO = new ClienteDAO();
 
                 $id = $_GET['id'];
                 $nombre = $_GET['nc'];
@@ -24,7 +24,7 @@
                 
                 
             echo "    <div class='mlogin'>
-            <form form method='POST' action='../Modelos/procesar_cambios_productos.php?id=$id'>
+            <form form method='POST' action='../Modelos/procesar_cambios_clientes.php?id=$id'>
             <div id='login'>
             
             <h1> Editar Producto </h1>

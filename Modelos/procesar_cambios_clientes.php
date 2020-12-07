@@ -1,19 +1,21 @@
 <?php
 
-  include('../Controladores/ProductoDAO.php');
+  include('../Controladores/ClienteDAO.php');
   //validacion de datos
 
   $id = $_GET['id'];
-  $descripcion = $_POST['caja_editar_descripcion_producto'];
-  $precio = $_POST['caja_editar_precio'];
-  $stock = $_POST['caja_editar_existencias'];
-  $id_producto = $_REQUEST['select_editar_tipo_producto'];
-  $id_proveedor = $_REQUEST['select_editar_proveedor'];
+  $nombre = $_POST['caja_editar_nombre_cliente'];
+  $direccion = $_POST['caja_editar_direccion_cliente'];
+  $telefono = $_POST['caja_editar_telefono_cliente'];
+  $correo = $_POST['caja_editar_correo_cliente'];
+  
 
-  $aDAO = new productoDAO();
+  $aDAO = new ClienteDAO();
 
-  $aDAO->modificarProducto($id, $descripcion, $precio, $stock, $id_producto, $id_proveedor);
+  $aDAO->modificarCliente($id, $nombre, $direccion, $telfono, $correo);
 
-
+  header('location:../Vista/formulario_clientes.php');
+  
+  
 
 ?>
