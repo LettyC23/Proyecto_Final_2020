@@ -156,7 +156,7 @@
                            
                         ?>
                       </select>
-                      
+                      <br>
                       <span style="color:red;">
                      <?php  
                         if(isset($_SESSION['errorIdProvedor'])) {

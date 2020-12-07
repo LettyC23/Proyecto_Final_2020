@@ -52,7 +52,7 @@ function validarRegistrarUsuario(){
     var usuario = document.getElementById('caja_nombre_usuario').value;
     var contraseña = document.getElementById('caja_password').value;
 
-    if(nombre=="1" || nombre.length==0 || /^\s+$/.test(nombre)){
+    if(nombre==null || nombre.length==0 || /^\s+$/.test(nombre)){
         return false;
     }
 

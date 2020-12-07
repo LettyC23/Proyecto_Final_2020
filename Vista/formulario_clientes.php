@@ -49,24 +49,73 @@
                     <div class="left">
                     &emsp;&emsp;&emsp;<label>Nombre Completo</label>&emsp;
                     <br>
-                    <input type="text"  id="caja_nombre_cliente" name="caja_nombre_cliente"  required >
+                    <input type="text"  id="caja_nombre_cliente" name="caja_nombre_cliente"  
+                    value="<?php  
+                     
+                     if(isset($_SESSION['datoNom'])) {
+                        echo $_SESSION['datoNom']; 
+                        }else{
+                            echo "";
+                        }
+                        unset($_SESSION['datoNom']);
+                        ?>" required >
                 </div>
                 <div class="left">
                     &emsp;&emsp;<label>Dirección </label>&emsp;
                     <br>
-                    <input type="text" size="20" id="caja_direccion_cliente" name="caja_direccion_cliente" required="">
+                    <input type="text" size="20" id="caja_direccion_cliente" name="caja_direccion_cliente" 
+                    value="<?php  
+                     
+                     if(isset($_SESSION['datoDir'])) {
+                        echo $_SESSION['datoDir']; 
+                        }else{
+                            echo "";
+                        }
+                        unset($_SESSION['datoDir']);
+                        ?>" required>
                 </div>
                  
                 <div class="left"> 
                     &ensp;<label> Teléfono </label>
                     <br>
-                    <input type="number" size="10" id="caja_telefono_cliente" name="caja_telefono_cliente" required>
+                    <input type="number" size="10" id="caja_telefono_cliente" name="caja_telefono_cliente" 
+                    value="<?php  
+                     
+                     if(isset($_SESSION['datoTel'])) {
+                        echo $_SESSION['datoTel']; 
+                        }else{
+                            echo "";
+                        }
+                        unset($_SESSION['datoTel']);
+                        ?>" required >
+
+                        <br>
+                        <span style="color:red;">
+                     <?php  
+                     
+                     if(isset($_SESSION['errorTel'])) {
+                        echo $_SESSION['errorTel']; 
+                        }else{
+                            echo "";
+                        }
+                        unset($_SESSION['errorTel']);
+                        ?>
+                        </span>
                 </div>
                     
                 <div class="left">
                     &emsp; <label> Correo </label>
                     <br>
-                    <input type="text" size="20" id="caja_correo_cliente" name="caja_correo_cliente" required>
+                    <input type="text" size="20" id="caja_correo_cliente" name="caja_correo_cliente" 
+                    value="<?php  
+                     
+                     if(isset($_SESSION['datoCorreo'])) {
+                        echo $_SESSION['datoCorreo']; 
+                        }else{
+                            echo "";
+                        }
+                        unset($_SESSION['datoCorreo']);
+                        ?>" required>
                 </div>&emsp;&emsp;
                         
                 </div>
