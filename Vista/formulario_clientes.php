@@ -106,7 +106,7 @@
                 <div class="left">
                     &emsp; <label> Correo </label>
                     <br>
-                    <input type="text" size="20" id="caja_correo_cliente" name="caja_correo_cliente" 
+                    <input type="email" size="20" id="caja_correo_cliente" name="caja_correo_cliente" 
                     value="<?php  
                      
                      if(isset($_SESSION['datoCorreo'])) {
