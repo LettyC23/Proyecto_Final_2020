@@ -43,18 +43,18 @@
                     <div class='left' >
                    <label for='inputEmail4'>Descripción</label>
                     <br>
-                    <input type='text' class='form-control' id='inputEmail4'  name='caja_editar_descripcion_producto' value='$descripcion'>
+                    <input type='text' class='form-control' id='inputEmail4'  name='caja_editar_descripcion_producto' required  value='$descripcion'>
                     </div>
                 <div class='left'>
                     <label>Precio </label>
                     <br>
-                    <input type='text' size='9' id='caja_editar_precio' name='caja_editar_precio' value='$precio'/>
+                    <input type='text' size='9' id='caja_editar_precio' name='caja_editar_precio' required value='$precio'/>
                 </div>
                  
                 <div class='left'> 
                     <label> Existencias </label>
                     <br>
-                    <input type='text' size='10' id='caja_editar_existencias' name='caja_editar_existencias' value='$stock'/>
+                    <input type='text' size='10' id='caja_editar_existencias' name='caja_editar_existencias' value='$stock' required/>
                 </div>
                     
                 <div class='left'>
@@ -140,7 +140,7 @@
                       <br>
                       <br>
                       <br>
-                      <button class='button' href='../Vista/pagina_productos.php' type='submit'>Guardar producto</button>
+                      <button class='button' href='../Vista/formulario_productos.php' type='submit'>Guardar producto</button>
                       <br>"
 
                       ?>

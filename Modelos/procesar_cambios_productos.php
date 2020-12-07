@@ -14,6 +14,6 @@
 
   $aDAO->modificarProducto($id, $descripcion, $precio, $stock, $id_producto, $id_proveedor);
 
-
+  header('location:../Vista/formulario_productos.php');
 
 ?>
