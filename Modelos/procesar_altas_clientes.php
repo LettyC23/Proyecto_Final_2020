@@ -10,7 +10,7 @@
   $correo = $_POST['caja_correo_cliente'];
   
   $datos_validos = true;
-  if(is_numeric($nombre)){
+  if(!ctype_alpha($nombre)){
     $_SESSION['errorNom'] = "Solo letras";
     $_SESSION['datoNom'] = $nombre;
     $datos_validos = false;

@@ -59,6 +59,18 @@
                         }
                         unset($_SESSION['datoDescripcion']);
                         ?>" required >
+                        <br>
+                        <span style="color:red;">
+                     <?php  
+                     
+                     if(isset($_SESSION['errorDes'])) {
+                        echo $_SESSION['errorDes']; 
+                        }else{
+                            echo "";
+                        }
+                        unset($_SESSION['errorDes']);
+                        ?>
+                        </span>
                 </div>
                 <div class="left">
                     &emsp;&emsp;<label>Precio </label>&emsp;
@@ -156,8 +168,8 @@
                            
                         ?>
                       </select>
-                      <br>
-                      <span style="color:red;">
+                      
+                      <span style="color:red;"><br>
                      <?php  
                         if(isset($_SESSION['errorIdProvedor'])) {
                         echo $_SESSION['errorIdProvedor']; 
@@ -167,8 +179,9 @@
                         unset($_SESSION['errorIdProvedor']);
                     ?>
                     </span>
-                      
-                      &emsp;&emsp;<button class="button" type="submit">Guardar producto</button>
+                <div>      
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                <button class="button" type="submit">Guardar producto</button>
                       <br>
                       <br>
                       <br>
