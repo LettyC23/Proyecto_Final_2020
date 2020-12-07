@@ -30,7 +30,7 @@
     $productoDAO = new productoDAO();
     $productoDAO->agregarProducto($id, $desc, $precio, $stock, $idproducto, $idproveedor);
  
-    header('location../Vista/pagina_productos.php');
+    header('location:../Vista/formulario_productos.php');
   
   
   
