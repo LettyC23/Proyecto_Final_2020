@@ -12,7 +12,7 @@
 
   $aDAO = new ClienteDAO();
 
-  $aDAO->modificarCliente($id, $nombre, $direccion, $telfono, $correo);
+  $aDAO->modificarCliente($id, $nombre, $direccion, $telefono, $correo);
 
   header('location:../Vista/formulario_clientes.php');
   

@@ -36,21 +36,25 @@
                     <div class='left' >
                    <label for='inputEmail4'>Nombre Cliente</label>
                     <br>
-                    <input type='text' class='form-control' id='inputEmail4'  name='caja_editar_nombre_cliente' value='$nombre'>
+                    <input type='text' class='form-control' id='inputEmail4'  name='caja_editar_nombre_cliente' required value='$nombre'>
                     </div>
                 <div class='left'>
-                    <label>Precio </label>
+                    <label>Dirección </label>
                     <br>
-                    <input type='text' size='9' id='caja_editar_precio' name='caja_editar_direccion_cliente' value='$direccion'/>
+                    <input type='text' size='9' id='caja_editar_precio' name='caja_editar_direccion_cliente'requrired value='$direccion'/>
                 </div>
                  
                 <div class='left'> 
-                    <label> Existencias </label>
+                    <label> Teléfono </label>
                     <br>
-                    <input type='text' size='10' id='caja_editar_existencias' name='caja_editar_telefono_cliente' value='$telefono'/>
+                    <input type='text' size='10' id='caja_editar_existencias' name='caja_editar_telefono_cliente' required value='$telefono'/>
                 </div>
                     
-                
+                <div class='left'> 
+                <label> Correo </label>
+                <br>
+                <input type='text' size='10' id='caja_editar_existencias' name='caja_editar_correo_cliente' required value='$correo'/>
+                </div>
                
                
                       <br>
