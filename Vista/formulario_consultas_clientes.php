@@ -110,7 +110,45 @@
 
                 <?php
 
+           
+        
+        $parametro = $_REQUEST['caja_buscar_cliente'];
+    
+        $b=$parametro;
+        //var_dump($res);
+        if(!empty($b)){
             include('../Conexion_BD/conexion_bd.php');
+            
+            $sql1="SELECT * FROM Clientes WHERE id_Cliente LIKE '%$parametro%' OR NombreCliente LIKE '%$parametro%'
+            OR Direccion LIKE '%$parametro%'  OR Telefono LIKE '%$parametro%' OR Correo LIKE '%$parametro%'";
+            
+            
+            $con = new ConexionBD();
+            $conexion = $con->getConexion();
+            
+            $res = mysqli_query($conexion, $sql1);
+            
+            
+            //var_dump($res);
+            if(mysqli_num_rows($res)>0 ){
+              while($fila = mysqli_fetch_assoc($res)){
+                printf("<tr><td>".$fila['id_Cliente']."</td>".
+                "<td>".$fila['NombreCliente']."</td>".
+                "<td>".$fila['Direccion']."</td>".
+                "<td>".$fila['Telefono']."</td>".
+                "<td>".$fila['Correo']."</td>".
+                "<td> <a href='../Vista/pagina_realizar_cambios_clientes.php?id=%s&nc=%s&d=%s&t=%s&c=%s'> <img src='img/edit.png'> </a>" ." </td>".
+                "<td> <a href='../Modelos/procesar_bajas_clientes.php?id=%s'> <img src='img/trash-can.png'> </a> </td> 
+                </tr>", $fila['id_Cliente'], $fila['NombreCliente'],  $fila['Direccion'],  $fila['Telefono'], $fila['Correo'], $fila['id_Cliente']
+              
+                );
+            }
+        }else{
+          echo ('No se encontro resultado de la búsqueda');
+        }
+        
+    }else {
+           
             $con = new ConexionBD();
             $conexion = $con->getConexion();
             $sql1 = "SELECT * FROM Clientes";
@@ -118,24 +156,25 @@
             $res = mysqli_query($conexion, $sql1);
             if(mysqli_num_rows($res)>0 ){
                 while($fila = mysqli_fetch_assoc($res)){
-                      printf("<tr><td>".$fila['id_Cliente']."</td>".
-                      "<td>".$fila['NombreCliente']."</td>".
-                      "<td>".$fila['Direccion']."</td>".
-                      "<td>".$fila['Telefono']."</td>".
-                      "<td>".$fila['Correo']."</td>".
-                      "<td> <a href='../Vista/pagina_realizar_cambios_clientes.php?id=%s&nc=%s&d=%s&t=%s&c=%s'> <img src='img/edit.png'> </a>" ." </td>".
-                      "<td> <a href='../Modelos/procesar_bajas_clientes.php?id=%s'> <img src='img/trash-can.png'> </a> </td> 
-                      </tr>", $fila['id_Cliente'], $fila['NombreCliente'],  $fila['Direccion'],  $fila['Telefono'], $fila['Correo'], $fila['id_Cliente']
-                    
+                    printf("<tr><td>".$fila['id_Cliente']."</td>".
+                    "<td>".$fila['NombreCliente']."</td>".
+                    "<td>".$fila['Direccion']."</td>".
+                    "<td>".$fila['Telefono']."</td>".
+                    "<td>".$fila['Correo']."</td>".
+                    "<td> <a href='../Vista/pagina_realizar_cambios_clientes.php?id=%s&nc=%s&d=%s&t=%s&c=%s'> <img src='img/edit.png'> </a>" ." </td>".
+                    "<td> <a href='../Modelos/procesar_bajas_clientes.php?id=%s'> <img src='img/trash-can.png'> </a> </td> 
+                    </tr>", $fila['id_Cliente'], $fila['NombreCliente'],  $fila['Direccion'],  $fila['Telefono'], $fila['Correo'], $fila['id_Cliente']
+                  
                   );
                 }
               }else{
                 echo ('No se encuentran registros aún');
               }
             
-        
+        }
       
       ?>
+
 
             </table>
 

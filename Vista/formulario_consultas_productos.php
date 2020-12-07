@@ -11,8 +11,9 @@
 </head>
 <body class="main">
     <div class="nav">
-        <a href="#" class="active" >INICIO</a> 
-        <a class="right" href="../Modelos/cerrar_sesion.php"> <img src="img/cerrar-sesion.png"></a> 
+    <a href="#" class="active" >INICIO</a>
+        <a href="formulario_cambios_usuarios.php" class="right" >Mi Cuenta &emsp;&emsp;</a>  
+        <a href="../Modelos/cerrar_sesion.php" class="right" >Cerrar Sesión &emsp;&emsp;</a> 
         
     </div>
 
@@ -23,7 +24,7 @@
                 <ul>
                 <li><a href="pagina_dashboard.html"> <img src="img/pagina-principal.png">&emsp; Inicio</a></li>
                     <li><a href="pagina_productos.php"> <img src="img/store.png">  Productos</a></li>
-                    <li><a href="pagina_clientes.html"> <img src="img/user (1).png"> &emsp;Clientes</a></li>
+                    <li><a href="pagina_clientes.php"> <img src="img/user (1).png"> &emsp;Clientes</a></li>
                     <li><a href="#"> <img src="img/user (1).png">  Usuarios</a></li>
                     <li><a href="#"> <img src="img/delivery-truck (1).png"> Proveedores</a></li>
                     <li><a href="#"> <img src="img/configuracion.png">&emsp; Ajustes</a></li>
