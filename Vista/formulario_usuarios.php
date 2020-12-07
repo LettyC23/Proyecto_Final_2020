@@ -47,11 +47,11 @@
                   
             </form  >
             <br>
-            <form method="POST" action="../Vista/formulario_consultas_productos.php">
+            <form method="POST" action="../Vista/formulario_consultas_usuarios.php">
             <div class="div-search" >
             
-            <input  type="text" size="50" id="caja_buscar_producto" name="caja_buscar_producto">
-                            <button class="button">Buscar</button>
+            <input  type="text" size="50" id="caja_buscar_usuario" name="caja_buscar_usuario">
+                            <button class="button">Buscar Usuario</button>
                     <br><br>
                 </div>
                 
@@ -67,7 +67,6 @@
                     <th>id_Usuario</th>
                     <th>Nombre Completo</th>
                     <th>Correo</th>
-                    <th>Nombre de Usuario</th>
                 </tr>
 
                 <?php
@@ -82,8 +81,7 @@
                 while($fila = mysqli_fetch_assoc($res)){
                       printf("<tr><td>".$fila['id_Usuario']."</td>".
                       "<td>".$fila['NombreUsuario']."</td>".
-                      "<td>".$fila['Correo']."</td>".
-                      "<td>".$fila['NombreDeUsuario']."</td>"
+                      "<td>".$fila['Correo']."</td>"
                   );
                 }
               }else{
