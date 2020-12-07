@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    if($_SESSION['autenticado'] == false){
+        header("location:../Vista/formulario_IniciarSesion.php");
+    }
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>

@@ -30,7 +30,7 @@
                     <li><a href="formulario_productos.php"> <img src="img/store.png">  Productos</a></li>
                     <li><a href="formulario_clientes.html"> <img src="img/user (1).png"> &emsp;Clientes</a>                    </li>
                     <li><a href="formulario_usuarios.php"> <img src="img/user (1).png">  Usuarios</a></li>
-                    <li><a href="#"> <img src="img/delivery-truck (1).png"> Proveedores</a></li>
+                    <li><a href="formulario_proveedores.php"> <img src="img/delivery-truck (1).png"> Proveedores</a></li>
                     <li><a href="#"> <img src="img/configuracion.png">&emsp; Ajustes</a></li>
                     
                 </ul>
