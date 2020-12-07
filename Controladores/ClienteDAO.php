@@ -2,7 +2,7 @@
 
 include('../Conexion_BD/conexion_bd.php');
 
-class ProductoDAO{
+class ClienteDAO{
     private $conexion;
 
       public function __construct(){

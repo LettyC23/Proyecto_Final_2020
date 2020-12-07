@@ -40,7 +40,7 @@
    
         <div class="wrapper" >
             <!--------------------------------Formulario altas------------------------------------->
-            <form  id="formulario_productos" method="POST" action="../Modelos/procesar_altas_clientes.php"  onsubmit="return validarFormularioProductos()">
+            <form  id="formulario_productos" method="POST" action="../Modelos/procesar_altas_clientes.php"  ">
                 <div class="simple_form">
                     <h2>Administrar Clientes</h2>
                     <br>
@@ -104,6 +104,8 @@
                     <th>Dirección</th>
                     <th>Teléfono</th>
                     <th>Correo</th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
                 </tr>
 
                 <?php
