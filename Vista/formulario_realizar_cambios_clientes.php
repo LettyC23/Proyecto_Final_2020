@@ -33,7 +33,7 @@
             <form form method='POST' action='../Modelos/procesar_cambios_clientes.php?id=$id'>
             <div id='login'>
             
-            <h1> Editar Producto </h1>
+            <h1> Editar Cliente </h1>
             
             <h6>id Producto <input type='text' size='2' id='caja_editar_id_cliente'  name='caja_editar_id_cliente' disabled='disabled' value='$id'></h6>
                     

@@ -47,9 +47,9 @@
             <form >
                 <div class="simple_form">
                     <h2>Lista de Usuarios</h2>
-                    <br>
+                    <br><br>
                   
-                      
+                    <a href="formulario_registrar_usuario.php" class="button">+ Agregar Usuario</a><br>
              
                   
             </form  >

@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    if($_SESSION['autenticado'] == false){
+        header("location:../Vista/formulario_IniciarSesion.php");
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,7 +37,8 @@
 
     <p>
     <label for="user_pass">Nombre De Usuario<br />
-    <input type="text" name="caja_nombre_usuario" id="caja_nombre_usuario" class="input" value="" size="20" /></label>
+    <input type="text" name="caja_nombre_usuario" id="caja_nombre_usuario" class="input" value="" size="20" 
+    ></label>
     </p>
 
     <p>
