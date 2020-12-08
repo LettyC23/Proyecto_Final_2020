@@ -90,7 +90,7 @@
                 <div class="left"> 
                 &emsp;&emsp;&emsp;<label> Dirección </label>
                     <br>
-                    <input type="number" size="10" id="caja_direccion_proveedor" name="caja_existencias" required
+                    <input type="number" size="10" id="caja_direccion_proveedor" name="caja_direccion_proveedor" required
                     value="<?php  
                      
                      if(isset($_SESSION['datoStock'])) {
@@ -106,7 +106,7 @@
                 <div class="left"> 
                 &emsp;&emsp;&emsp;<label> Teléfono </label>
                     <br>
-                    <input type="number" size="10" id="caja_telefono_proveedor" name="caja_telefono_cliente" 
+                    <input type="number" size="10" id="caja_telefono_proveedor" name="caja_telefono_proveedor" 
                     value="<?php  
                      
                      if(isset($_SESSION['datoTel'])) {
