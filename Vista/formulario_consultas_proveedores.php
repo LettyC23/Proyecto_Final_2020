@@ -170,32 +170,69 @@
 
                 <?php
 
-            include('../Conexion_BD/conexion_bd.php');
-            $con = new ConexionBD();
-            $conexion = $con->getConexion();
-            $sql1 = "SELECT * FROM Proveedores";
-    
-            $res = mysqli_query($conexion, $sql1);
-            if(mysqli_num_rows($res)>0 ){
-                while($fila = mysqli_fetch_assoc($res)){
-                      printf("<tr><td>".$fila['id_Proveedor']."</td>".
-                      "<td>".$fila['NombreProveedor']."</td>".
-                      "<td>".$fila['NombreEmpresa']."</td>".
-                      "<td>".$fila['Direccion']."</td>".
-                      "<td>".$fila['Telefono']."</td>".
-                      "<td> <a href='../Vista/formulario_realizar_cambios_proveedores.php?id=%s&np=%s&ne=%s&d=%s&t=%s'> <img src='img/edit.png'> </a>" ." </td>".
-                      "<td> <a href='../Modelos/procesar_bajas_proveedores.php?id=%s'> <img src='img/trash-can.png'> </a> </td> 
-                      </tr>", $fila['id_Proveedor'], $fila['NombreProveedor'],  $fila['NombreEmpresa'],  $fila['Direccion'], $fila['Telefono'], $fila['id_Proveedor']
-                    
-                  );
-                }
-              }else{
-                echo ('No se encontro resultado de la búsqueda');
-              }
-            
         
+$parametro = $_REQUEST['caja_buscar_proveedor'];
+    
+$b=$parametro;
+//var_dump($res);
+if(!empty($b)){
+    include('../Conexion_BD/conexion_bd.php');
+    
+    $sql1="SELECT * FROM Proveedores WHERE id_Proveedor LIKE '%$parametro%' OR NombreProveedor LIKE '%$parametro%'
+    OR NombreEmpresa LIKE '%$parametro%' OR Direccion LIKE '%$parametro%'  OR Telefono LIKE '%$parametro%' ";
+    
+    
+    $con = new ConexionBD();
+    $conexion = $con->getConexion();
+    
+    $res = mysqli_query($conexion, $sql1);
+    
+    
+    //var_dump($res);
+    if(mysqli_num_rows($res)>0 ){
+      while($fila = mysqli_fetch_assoc($res)){
+        printf("<tr><td>".$fila['id_Proveedor']."</td>".
+        "<td>".$fila['NombreProveedor']."</td>".
+        "<td>".$fila['NombreEmpresa']."</td>".
+        "<td>".$fila['Direccion']."</td>".
+        "<td>".$fila['Telefono']."</td>".
+        "<td> <a href='../Vista/formulario_realizar_cambios_proveedores.php?id=%s&np=%s&ne=%s&d=%s&t=%s'> <img src='img/edit.png'> </a>" ." </td>".
+        "<td> <a href='../Modelos/procesar_bajas_proveedores.php?id=%s'> <img src='img/trash-can.png'> </a> </td> 
+        </tr>", $fila['id_Proveedor'], $fila['NombreProveedor'],  $fila['NombreEmpresa'],  $fila['Direccion'], $fila['Telefono'], $fila['id_Proveedor']
       
-      ?>
+        );
+    }
+}else{
+  echo ('No se encontro resultado de la búsqueda');
+}
+
+}else {
+include('../Conexion_BD/conexion_bd.php');
+    $con = new ConexionBD();
+    $conexion = $con->getConexion();
+    $sql1 = "SELECT * FROM Proveedores";
+
+    $res = mysqli_query($conexion, $sql1);
+    if(mysqli_num_rows($res)>0 ){
+        while($fila = mysqli_fetch_assoc($res)){
+            printf("<tr><td>".$fila['id_Proveedor']."</td>".
+            "<td>".$fila['NombreProveedor']."</td>".
+            "<td>".$fila['NombreEmpresa']."</td>".
+            "<td>".$fila['Direccion']."</td>".
+            "<td>".$fila['Telefono']."</td>".
+            "<td> <a href='../Vista/formulario_realizar_cambios_proveedores.php?id=%s&np=%s&ne=%s&d=%s&t=%s'> <img src='img/edit.png'> </a>" ." </td>".
+            "<td> <a href='../Modelos/procesar_bajas_proveedores.php?id=%s'> <img src='img/trash-can.png'> </a> </td> 
+            </tr>", $fila['id_Proveedor'], $fila['NombreProveedor'],  $fila['NombreEmpresa'],  $fila['Direccion'], $fila['Telefono'], $fila['id_Proveedor']
+          
+          );
+        }
+      }else{
+        echo ('No se encuentran registros aún');
+      }
+    
+}
+
+?>
 
             </table>
 
