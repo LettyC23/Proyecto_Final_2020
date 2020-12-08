@@ -33,9 +33,10 @@ class ProveedorDAO{
         $sql= "DELETE FROM Proveedores WHERE id_Proveedor ='$nc'";
         if(mysqli_query($this->conexion->getConexion(),$sql)  ){
             header('location:../Vista/formulario_proveedores.php');
+            
         }else{
             //echo "¿SERA MUY TARDE PARA CAMBIAR DE CARRERA??? =(";
-            //echo mysqli_error($this->conexion->getConexion());
+            echo mysqli_error($this->conexion->getConexion());
         }
     }//eliminar
 

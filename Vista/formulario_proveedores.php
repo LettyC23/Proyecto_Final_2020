@@ -183,7 +183,7 @@
                       "<td>".$fila['NombreEmpresa']."</td>".
                       "<td>".$fila['Direccion']."</td>".
                       "<td>".$fila['Telefono']."</td>".
-                      "<td> <a href='../Vista/formulario_realizar_cambios_proveedores.php?id=%np&ne=%s&d=%s&t=%s'> <img src='img/edit.png'> </a>" ." </td>".
+                      "<td> <a href='../Vista/formulario_realizar_cambios_proveedores.php?id=%s&np=%s&ne=%s&d=%s&t=%s'> <img src='img/edit.png'> </a>" ." </td>".
                       "<td> <a href='../Modelos/procesar_bajas_proveedores.php?id=%s'> <img src='img/trash-can.png'> </a> </td> 
                       </tr>", $fila['id_Proveedor'], $fila['NombreProveedor'],  $fila['NombreEmpresa'],  $fila['Direccion'], $fila['Telefono'], $fila['id_Proveedor']
                     
