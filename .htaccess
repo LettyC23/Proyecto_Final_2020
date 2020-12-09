@@ -1,3 +1,2 @@
 ErrorDocument 404 Http://localhost/ago_dic_2020/Proyecto/vista/pagina_404.html
 
-Options All -Indexes 
