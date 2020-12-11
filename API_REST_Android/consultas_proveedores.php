@@ -11,12 +11,12 @@ include('../Conexion_BD/conexion_bd.php');
 
         $cadena_JSON = file_get_contents('php://input'); // prepara PHP para recibir informacion a traves de HTTP
 
-        if($cadena_JSON == false){
-            echo "No hay peticion HTTP";
-        }else{
+        //if($cadena_JSON == false){
+            //echo "No hay peticion HTTP";
+        //}else{
             $filtro = json_decode($cadena_JSON, TRUE);
 
-            $sql = "SELECT * FROM Proveedores";
+            $sql = "SELECT * FROM Proveedores;";
     
             $res = mysqli_query($conexion, $sql);
     
@@ -32,16 +32,16 @@ include('../Conexion_BD/conexion_bd.php');
                     $proveedor['np'] = $fila['NombreProveedor'];
                     $proveedor['ne'] = $fila['NombreEmpresa'];
                     $proveedor['d'] = $fila['Direccion'];
-                    $proveedor['t'] = $fila['telefono'];
+                    $proveedor['t'] = $fila['Telefono'];
 
                     array_push($datos['proveedores'], $proveedor);
 
-                    echo json_encode($datos);
-                }
+                    
+                }echo json_encode($datos);
             }else{
                 //todo mal
                 
-            }
+            //}
         }
         
     }
