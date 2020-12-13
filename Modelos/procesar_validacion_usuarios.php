@@ -1,5 +1,5 @@
 <?php
-
+  session_start();
 include('../Conexion_BD/conexion_bd_usuarios.php');
 
     $con = new ConexionBD();
@@ -17,15 +17,17 @@ include('../Conexion_BD/conexion_bd_usuarios.php');
     $res = mysqli_query($conexion, $sql);
 
     if(mysqli_num_rows($res)>0){
-        session_start();
+      
         $_SESSION['autenticado'] = true;
         $_SESSION['usuario'] = $usuario_cifrado;
         $_SESSION['contraseña'] = $contraseña_cifrado;
-        
+       // $_SESSION['e'] = "Usuario o contraseña incorrectos!!!";
         header('location:../Vista/formulario_dashboard.php');
         
     }else{
-        header('location:../Vista/formulario_IniciarSesion.php');
+        $_SESSION['autenticado'] = false;
+        $_SESSION['e'] = "Usuario o contraseña incorrectos!!!";
+       header('location:../Vista/formulario_IniciarSesion.php');
     }
     
 

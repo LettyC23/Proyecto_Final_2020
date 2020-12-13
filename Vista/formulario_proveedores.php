@@ -75,7 +75,7 @@
                 <div class="left">
                     &emsp;<label>Nombre de la empresa </label>&emsp;
                     <br>
-                    <input type="text" size="9" id="caja_nombre_empresa_proveedor" name="caja_nombre_empresa_proveedor" required 
+                    <input type="text" size="20" id="caja_nombre_empresa_proveedor" name="caja_nombre_empresa_proveedor" required 
                     value="<?php  
                      
                      if(isset($_SESSION['datoPrecio'])) {
@@ -90,7 +90,7 @@
                 <div class="left"> 
                 &emsp;&emsp;&emsp;<label> Dirección </label>
                     <br>
-                    <input type="text" size="10" id="caja_direccion_proveedor" name="caja_direccion_proveedor" required
+                    <input type="text" size="20" id="caja_direccion_proveedor" name="caja_direccion_proveedor" required
                     value="<?php  
                      
                      if(isset($_SESSION['datoStock'])) {

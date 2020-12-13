@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -30,8 +34,20 @@
             <p>
                 <label for="user_pass">Contraseña<br />
                 <input type="password" name="caja_contraseña" id="caja_contraseña" class="input" value="" size="20" required></label>
+               <br> <span style="color:red;">
+                <?php  
+                     
+                     if(isset($_SESSION['e'])) {
+                        echo $_SESSION['e']; 
+                        }else{
+                            echo "";
+                        }
+                        unset($_SESSION['e']);
+                        ?>
+                        </span>
             </p>
             <button type="submit" class="button"><i class="fas fa-sign-in-alt"></i>  Ingresar </button><br>
+            
             <p class="regtext">No estas registrado? <a href="formulario_registrar_usuario.php">Registrate Aquí</a>!</p>
         </form>
         
