@@ -26,7 +26,7 @@
             <div class="nav">
                 <nav>
                 <ul>
-                <li><a href="formulario_dashboard.php"> <img src="img/pagina-principal.png">&emsp; Inicio</a></li>
+                <li><a href="#"> <img src="img/pagina-principal.png">&emsp; Inicio</a></li>
                     <li><a href="formulario_productos.php"> <img src="img/store.png">  Productos</a></li>
                     <li><a href="formulario_clientes.php"> <img src="img/user (1).png"> &emsp;Clientes</a>                    </li>
                     <li><a href="formulario_usuarios.php"> <img src="img/user (1).png">  Usuarios</a></li>
@@ -75,7 +75,7 @@
                 <div class="left">
                     &emsp;<label>Nombre de la empresa </label>&emsp;
                     <br>
-                    <input type="number" size="9" id="caja_nombre_empresa_proveedor" name="caja_nombre_empresa_proveedor" required 
+                    <input type="text" size="9" id="caja_nombre_empresa_proveedor" name="caja_nombre_empresa_proveedor" required 
                     value="<?php  
                      
                      if(isset($_SESSION['datoPrecio'])) {
@@ -90,7 +90,7 @@
                 <div class="left"> 
                 &emsp;&emsp;&emsp;<label> Dirección </label>
                     <br>
-                    <input type="number" size="10" id="caja_direccion_proveedor" name="caja_direccion_proveedor" required
+                    <input type="text" size="10" id="caja_direccion_proveedor" name="caja_direccion_proveedor" required
                     value="<?php  
                      
                      if(isset($_SESSION['datoStock'])) {
