@@ -11,9 +11,9 @@ include('../Conexion_BD/conexion_bd.php');
 
         $cadena_JSON = file_get_contents('php://input'); // prepara PHP para recibir informacion a traves de HTTP
 
-        if($cadena_JSON == false){
-            echo "No hay peticion HTTP";
-        }else{
+        //if($cadena_JSON == false){
+          //  echo "No hay peticion HTTP";
+        //}else{
             $datos = json_decode($cadena_JSON, TRUE);
 
             $nc = $datos['nc'];
@@ -35,7 +35,7 @@ include('../Conexion_BD/conexion_bd.php');
                 $respuesta[] = "Eliminación incorrecta";
                 echo json_encode($respuesta);
                 //var_dump($cad);
-            }
+            //}
         }
         
     }
