@@ -1,6 +1,6 @@
 <?php
 
-include('../Conexion_BD/conexion_bd.php');
+include('../Conexion_BD/conexion_bd_usuarios.php');
 
     $con = new ConexionBD();
     $conexion = $con->getConexion();
@@ -16,11 +16,12 @@ echo"---------------------------------------------------------------------------
         }else{
             $datos = json_decode($cadena_JSON, TRUE);
 
-            $nc = $datos['nc'];
-            $c= $datos['c'];
+            $nc = SHA1($datos['nc']);
+            $c= SHA1($datos['c']);
     
             $sql = "SELECT * FROM Usuarios WHERE NombreDeUsuario='$nc' AND Contrasenia='$c'";
-            
+            echo "------------------";
+            var_dump($nc);
             $res = mysqli_query($conexion, $sql);
             
             $respuesta = array();

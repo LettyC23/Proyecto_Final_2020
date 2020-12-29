@@ -11,8 +11,8 @@ class ClienteDAO{
       
       //--------------------------------------- ALTAS -------------------------------------------
 
-      public function agregarCliente($id, $nombre, $direccion, $telefono, $correo){
-        $sql= "INSERT INTO Clientes VALUES ('$id', '$nombre','$direccion','$telefono','$correo');";
+      public function agregarCliente($id, $nombre, $primerap, $segundoap, $calle, $numero, $colonia, $estado, $telefono, $correo){
+        $sql= "INSERT INTO Clientes VALUES ('$id', '$nombre', '$primerap','$segundoap','$calle','$numero','$colonia','$estado','$telefono','$correo');";
         if(mysqli_query($this->conexion->getConexion(),$sql)  ){
            // echo("<script> alert('Agregado con Exito')</script>");
             header('location:../Vista/pagina_clientes.php');
@@ -42,8 +42,9 @@ class ClienteDAO{
 
     //----------------------------- MODIFICAR ---------------------------------
 
-    public function modificarCliente($id, $nombre, $direccion, $telefono, $correo){
-        $sql= "UPDATE Clientes SET NombreCliente='$nombre',Direccion='$direccion',Telefono='$telefono',
+    public function modificarCliente($id, $nombre, $primerap, $segundoap, $calle, $numero, $colonia, $estado, $telefono, $correo){
+        $sql= "UPDATE Clientes SET NombreCliente='$nombre',ApellidoPatCliente='$primerap',ApellidoMatCliente='$segundoap',CalleCliente='$calle',
+        NumeroCliente='$numero',ColoniaCliente='$colonia',EstadoCliente='$estado',Telefono='$telefono',
         Correo='$correo' WHERE id_Cliente='$id';";
         if(mysqli_query($this->conexion->getConexion(),$sql)  ){
             header('location:../Vista/pagina_clientes.php');

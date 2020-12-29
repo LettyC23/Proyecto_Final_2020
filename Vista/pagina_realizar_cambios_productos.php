@@ -56,8 +56,8 @@
                     <br>
                     <input type='text' size='10' id='caja_editar_existencias' name='caja_editar_existencias' value='$stock' required/>
                 </div>
-                    
-                <div class='left'>
+                
+                <div class='left'><br>
                     <label> Tipo de producto </label>
                     <br>
                     <select id='inputState' class='form-control' name='select_editar_tipo_producto' >
@@ -99,7 +99,7 @@
                 </div>
                
                 <div  >
-                &emsp;&emsp;<label> Proveedor </label>
+                &emsp;&emsp;<br><label> Proveedor </label>
                     <br>
                     &emsp;&emsp;<select id='inputState' class='form-control' name='select_editar_proveedor' value='$id_proveedor'>
                     <option selected>"?>

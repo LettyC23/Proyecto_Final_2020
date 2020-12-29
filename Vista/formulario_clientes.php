@@ -47,7 +47,7 @@
                     <h2>Administrar Clientes</h2>
                     <br>
                     <div class="left">
-                    &emsp;&emsp;&emsp;<label>Nombre Completo</label>&emsp;
+                    &emsp;&emsp;&emsp;<label>Nombre(s)</label>&emsp;
                     <br>
                     <input type="text"  id="caja_nombre_cliente" name="caja_nombre_cliente"  
                     value="<?php  
@@ -73,22 +73,115 @@
                         </span>
                 </div>
                 <div class="left">
-                    &emsp;&emsp;<label>Dirección </label>&emsp;
+                    &emsp;&emsp;<label>Primer Apellido</label>&emsp;
                     <br>
-                    <input type="text" size="20" id="caja_direccion_cliente" name="caja_direccion_cliente" 
+                    <input type="text"  id="caja_appaterno_cliente" name="caja_appaterno_cliente"  
                     value="<?php  
                      
-                     if(isset($_SESSION['datoDir'])) {
-                        echo $_SESSION['datoDir']; 
+                     if(isset($_SESSION['datoPAp'])) {
+                        echo $_SESSION['datoPAp']; 
                         }else{
                             echo "";
                         }
-                        unset($_SESSION['datoDir']);
+                        unset($_SESSION['datoPAp']);
+                        ?>" required >
+                        <br>
+                        <span style="color:red;">
+                     <?php  
+                     
+                     if(isset($_SESSION['errorNom'])) {
+                        echo $_SESSION['errorNom']; 
+                        }else{
+                            echo "";
+                        }
+                        unset($_SESSION['errorNom']);
+                        ?>
+                        </span>
+                </div>
+                <div class="left">
+                    &emsp;&emsp;<label>Segundo Apellido</label>&emsp;
+                    <br>
+                    <input type="text"  id="caja_apmaterno_cliente" name="caja_apmaterno_cliente"  
+                    value="<?php  
+                     
+                     if(isset($_SESSION['datoSAp'])) {
+                        echo $_SESSION['datoSAp']; 
+                        }else{
+                            echo "";
+                        }
+                        unset($_SESSION['datoSAp']);
+                        ?>" required >
+                        <br>
+                        <span style="color:red;">
+                     <?php  
+                     
+                     if(isset($_SESSION['errorNom'])) {
+                        echo $_SESSION['errorNom']; 
+                        }else{
+                            echo "";
+                        }
+                        unset($_SESSION['errorNom']);
+                        ?>
+                        </span>
+                </div>
+                <div class="left">
+                    &emsp;&emsp;&emsp;<label>Calle </label>&emsp;
+                    <br>
+                    <input type="text" size="15" id="caja_calle_cliente" name="caja_calle_cliente" 
+                    value="<?php  
+                     
+                     if(isset($_SESSION['datoCalle'])) {
+                        echo $_SESSION['datoCalle']; 
+                        }else{
+                            echo "";
+                        }
+                        unset($_SESSION['datoCalle']);
                         ?>" required>
                 </div>
-                 
+                <div class="left">
+                    &emsp;&ensp;<label>Número </label>&emsp;
+                    <br>
+                    <input type="number" size="10" id="caja_numero_cliente" name="caja_numero_cliente" 
+                    value="<?php  
+                     
+                     if(isset($_SESSION['datoNumero'])) {
+                        echo $_SESSION['datoNumero']; 
+                        }else{
+                            echo "";
+                        }
+                        unset($_SESSION['datoNumero']);
+                        ?>" required>
+                </div>
+                <div class="left">
+                    &emsp;&emsp;&emsp;&ensp;<label>Colonia </label>&emsp;
+                    <br>
+                    <input type="text" size="20" id="caja_colonia_cliente" name="caja_colonia_cliente" 
+                    value="<?php  
+                     
+                     if(isset($_SESSION['datoColonia'])) {
+                        echo $_SESSION['datoColonia']; 
+                        }else{
+                            echo "";
+                        }
+                        unset($_SESSION['datoColonia']);
+                        ?>" required>
+                </div>
+                <div class="left">
+                    &emsp;&emsp;&emsp;<label>Estado </label>&emsp;
+                    <br>
+                    <input type="text" size="15" id="caja_estado_cliente" name="caja_estado_cliente" 
+                    value="<?php  
+                     
+                     if(isset($_SESSION['datoEstado'])) {
+                        echo $_SESSION['datoEstado']; 
+                        }else{
+                            echo "";
+                        }
+                        unset($_SESSION['datoEstado']);
+                        ?>" required>
+                </div>
                 <div class="left"> 
-                    &ensp;<label> Teléfono </label>
+                &emsp;&emsp;&emsp;<label> Teléfono </label>
                     <br>
                     <input type="number" size="10" id="caja_telefono_cliente" name="caja_telefono_cliente" 
                     value="<?php  
@@ -116,7 +209,7 @@
                 </div>
                     
                 <div class="left">
-                    &emsp; <label> Correo </label>
+                    &emsp;&emsp;&emsp;<label> Correo </label>
                     <br>
                     <input type="email" size="20" id="caja_correo_cliente" name="caja_correo_cliente" 
                     value="<?php  
@@ -132,7 +225,7 @@
                         
                 </div>
                
-               
+               <br>
                    
                       &emsp;&emsp;<button class="button" type="submit">Guardar Cliente</button>
                       <br>
@@ -164,7 +257,12 @@
                 <tr > 
                     <th>id_Cliente</th>
                     <th>Nombre</th>
-                    <th>Dirección</th>
+                    <th>Primer AP.</th>
+                    <th>Segundo Ap.</th>
+                    <th>Calle</th>
+                    <th>Número</th>
+                    <th>Colonia</th>
+                    <th>Estado</th>
                     <th>Teléfono</th>
                     <th>Correo</th>
                     <th>Editar</th>
@@ -183,12 +281,17 @@
                 while($fila = mysqli_fetch_assoc($res)){
                       printf("<tr><td>".$fila['id_Cliente']."</td>".
                       "<td>".$fila['NombreCliente']."</td>".
-                      "<td>".$fila['Direccion']."</td>".
+                      "<td>".$fila['ApellidoPatCliente']."</td>".
+                      "<td>".$fila['ApellidoMatCliente']."</td>".
+                      "<td>".$fila['CalleCliente']."</td>".
+                      "<td>".$fila['NumeroCliente']."</td>".
+                      "<td>".$fila['ColoniaCliente']."</td>".
+                      "<td>".$fila['EstadoCliente']."</td>".
                       "<td>".$fila['Telefono']."</td>".
                       "<td>".$fila['Correo']."</td>".
-                      "<td> <a href='../Vista/formulario_realizar_cambios_clientes.php?id=%s&nc=%s&d=%s&t=%s&c=%s'> <img src='img/edit.png'> </a>" ." </td>".
+                      "<td> <a href='../Vista/formulario_realizar_cambios_clientes.php?id=%s&nc=%s&pa=%s&sa=%s&ca=%s&n=%s&col=%s&e=%s&t=%s&c=%s'> <img src='img/edit.png'> </a>" ." </td>".
                       "<td> <a href='../Modelos/procesar_bajas_clientes.php?id=%s'> <img src='img/trash-can.png'> </a> </td> 
-                      </tr>", $fila['id_Cliente'], $fila['NombreCliente'],  $fila['Direccion'],  $fila['Telefono'], $fila['Correo'], $fila['id_Cliente']
+                      </tr>", $fila['id_Cliente'], $fila['NombreCliente'], $fila['ApellidoPatCliente'], $fila['ApellidoMatCliente'], $fila['CalleCliente'], $fila['NumeroCliente'], $fila['ColoniaCliente'],$fila['EstadoCliente'], $fila['Telefono'], $fila['Correo'], $fila['id_Cliente']
                     
                   );
                 }

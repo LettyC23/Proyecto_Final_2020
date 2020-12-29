@@ -12,7 +12,7 @@
 
 .body_edit_products {
     background-image: linear-gradient(125deg,#6a89cc,#b8e994);
-    font-family: ‘Open Sans’, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 
     }
     
@@ -22,6 +22,7 @@
     }
     
      h1 {
+        font-family: Arial, Helvetica, sans-serif;
         color: #777;
         text-align: center;
         font-weight: 300;
@@ -40,7 +41,7 @@
         margin:0 30%;
         padding: 10px;
         text-align: left;
-        font-family: "Font Awesome\ 5 Free";
+        font-family: Arial, Helvetica, sans-serif;
         position: absolute;
         left: 28px;
         font-size: 22px;
@@ -59,6 +60,7 @@
 
    
     .button{
+        font-family: Arial, Helvetica, sans-serif;
     border: solid 1px #da7c0c;
     background: #f78d1d;
     background: -moz-linear-gradient(top, #faa51a, #f47a20);

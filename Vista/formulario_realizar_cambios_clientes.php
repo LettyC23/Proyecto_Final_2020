@@ -24,7 +24,12 @@
 
                 $id = $_GET['id'];
                 $nombre = $_GET['nc'];
-                $direccion = $_GET['d'];;
+                $primerap = $_GET['pa'];
+                $segundoap = $_GET['sa'];
+                $calle = $_GET['ca'];;
+                $numero = $_GET['n'];;
+                $colonia = $_GET['col'];;
+                $estado = $_GET['e'];;
                 $telefono = $_GET['t'];;
                 $correo = $_GET['c'];
                 
@@ -40,16 +45,40 @@
                    
                 <div >
                     <div class='left' >
-                   <label for='inputEmail4'>Nombre Cliente</label>
+                   <label for='inputEmail4'>Nombre </label>
                     <br>
                     <input type='text' class='form-control' id='inputEmail4'  name='caja_editar_nombre_cliente' required value='$nombre'>
                     </div>
+                    <div class='left' >
+                    <label for='inputEmail4'>Primer Apellido</label>
+                     <br>
+                     <input type='text' class='form-control' id='inputEmail4'  name='caja_editar_primer_ap_cliente' required value='$primerap'>
+                     </div>
+                     <div class='left' >
+                    <label for='inputEmail4'>Segundo Apellido</label>
+                     <br>
+                     <input type='text' class='form-control' id='inputEmail4'  name='caja_editar_segundo_ap_cliente' required value='$segundoap'>
+                     </div>
                 <div class='left'>
-                    <label>Dirección </label>
+                    <label>Calle </label>
                     <br>
-                    <input type='text' size='9' id='caja_editar_precio' name='caja_editar_direccion_cliente'requrired value='$direccion'/>
+                    <input type='text' size='9' id='caja_editar_calle' name='caja_editar_calle_cliente'requrired value='$calle'/>
                 </div>
-                 
+                <div class='left' >
+                <label for='inputEmail4'>Número</label>
+                 <br>
+                 <input type='text' class='form-control' id='inputEmail4'  name='caja_editar_numero_liente' required value='$numero'>
+                 </div>
+                 <div class='left' >
+                    <label for='inputEmail4'>Colonia</label>
+                     <br>
+                     <input type='text' class='form-control' id='inputEmail4'  name='caja_editar_colonia_cliente' required value='$colonia'>
+                     </div>
+                     <div class='left' >
+                    <label for='inputEmail4'>Estado</label>
+                     <br>
+                     <input type='text' class='form-control' id='inputEmail4'  name='caja_editar_estado_cliente' required value='$estado'>
+                     </div>
                 <div class='left'> 
                     <label> Teléfono </label>
                     <br>
@@ -63,7 +92,7 @@
                 </div>
                
                
-                      <br>
+                      <br><br><br><br><br><br><br><br><br><br>
                       <br>
                       <br>
                       <button class='button' href='../Vista/pagina_productos.php' type='submit'>Guardar producto</button>
